@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    font-family: '{{FONT_FAMILY}}', sans-serif;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* Imagem de fundo fullbleed */
+  .cover-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Overlay escuro — preserva topo, escurece base */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.92) 0%,
+      rgba(0,0,0,0.60) 40%,
+      rgba(0,0,0,0.10) 70%,
+      transparent 100%
+    );
+  }
+
+  /* Conteudo sobre o overlay */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 72px;
+  }
+
+  .category {
+    font-size: 13px;
+    font-weight: 600;
+    color: {{ACCENT_COLOR}};
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .hook {
+    font-size: 68px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    max-width: 960px;
+  }
+
+  /* Palavra de destaque no hook */
+  .hook .highlight {
+    background: {{ACCENT_COLOR}};
+    padding: 0 8px;
+    display: inline;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 800px;
+  }
+
+  /* Progress bar no rodape */
+  .progress-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: calc(100% * 1 / {{TOTAL_SLIDES}});
+    height: 4px;
+    background: linear-gradient(90deg, {{ACCENT_COLOR}}, {{ACCENT_COLOR_DARK}});
+  }
+
+  /* Badge de marca — canto superior direito */
+  .brand-badge {
+    position: absolute;
+    top: 48px; right: 56px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-badge .handle {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- IMAGEM DE FUNDO (base64) -->
+  <img class="cover-image" src="{{COVER_IMAGE_B64}}" alt="cover">
+
+  <!-- OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- BADGE DA MARCA -->
+  <div class="brand-badge">
+    <span class="handle">{{BRAND_HANDLE}}</span>
+  </div>
+
+  <!-- CONTEUDO PRINCIPAL -->
+  <div class="content">
+    <span class="category">{{CATEGORY}}</span>
+    <h1 class="hook">{{HOOK_TEXT}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar"></div>
+
+</body>
+</html>
+
+<!--
+VARIAVEIS PARA SUBSTITUIR:
+  {{FONT_FAMILY}}       → fonte do BRAND_CONTEXT
+  {{ACCENT_COLOR}}      → cor de destaque da marca (ex: #FF6B35)
+  {{ACCENT_COLOR_DARK}} → versao escura (ex: #E53E1A)
+  {{COVER_IMAGE_B64}}   → data:image/jpeg;base64,... (imagem gerada pela IA)
+  {{TOTAL_SLIDES}}      → total de slides do carrossel
+  {{BRAND_HANDLE}}      → handle do perfil (ex: @promptfy.pro)
+  {{CATEGORY}}          → tag de categoria (ex: PRODUTIVIDADE)
+  {{HOOK_TEXT}}         → hook aprovado pelo usuario
+  {{SUBTITLE}}          → subtitulo / contexto do hook
+-->

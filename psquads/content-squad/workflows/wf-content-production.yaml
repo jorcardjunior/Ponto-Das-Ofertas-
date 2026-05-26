@@ -1,0 +1,133 @@
+id: wf-content-production
+title: "Workflow de Producao de Conteudo"
+version: "1.0"
+squad: content-squad
+trigger: "*campanha"
+entry_agent: content-chief
+
+description: >
+  Workflow de alto nivel para producao de conteudo completo de uma campanha.
+  Coordena multiplos formatos (carrossel, reel, posts) em uma unica sessao,
+  mantendo consistencia de marca e mensagem entre todas as pecas.
+
+inputs:
+  required:
+    - campaign_goal: "Objetivo da campanha (vender, educar, engajar, lancar)"
+    - duration: "Periodo da campanha (ex: 7 dias, 1 mes)"
+  optional:
+    - formats: "Formatos desejados (carrossel, reel, post)"
+    - platforms: "Plataformas alvo"
+    - pieces_count: "Quantidade de pecas"
+
+stages:
+  - id: brand-loading
+    name: "Contexto de Marca"
+    agent: content-chief
+    action: read_brand_context
+    source: "brand-context/BRAND_CONTEXT.md"
+
+  - id: campaign-elicitation
+    name: "Definicao da Campanha"
+    agent: content-chief
+    action: elicit
+    questions:
+      - field: campaign_goal
+        prompt: "Qual o objetivo da campanha? [1]Vender [2]Educar [3]Lancar produto [4]Engajar comunidade"
+      - field: duration
+        prompt: "Por quanto tempo vai durar a campanha? (ex: 7 dias, 2 semanas, 1 mes)"
+      - field: pieces_count
+        prompt: "Quantas pecas quer produzir? (ex: 3 carrosseis + 5 reels)"
+      - field: platforms
+        prompt: "Onde vai publicar? (Instagram / LinkedIn / Ambos)"
+
+  - id: content-calendar
+    name: "Calendario de Conteudo"
+    agent: content-chief
+    action: plan_calendar
+    input:
+      goal: "{{campaign_goal}}"
+      duration: "{{duration}}"
+      pieces: "{{pieces_count}}"
+      platforms: "{{platforms}}"
+    output: content_calendar
+    delivers:
+      - posting_schedule
+      - content_mix
+      - narrative_arc_campaign
+
+  - id: content-production-loop
+    name: "Producao das Pecas"
+    agent: content-chief
+    action: produce_each
+    loop: "{{content_calendar.content_mix}}"
+    for_each:
+      carrossel:
+        workflow: wf-carousel
+      reel:
+        task: create-reel-script
+      post:
+        agent: social-publisher
+        action: create_post
+    output: all_content_pieces
+
+  - id: consistency-review
+    name: "Revisao de Consistencia"
+    agent: content-chief
+    action: review_consistency
+    input:
+      pieces: "{{all_content_pieces}}"
+      brand_context: "{{brand_context}}"
+    checks:
+      - tom_de_voz_consistente
+      - narrativa_coesa
+      - ctas_variados
+      - formatos_corretos_por_plataforma
+    output: consistency_report
+
+  - id: final-delivery
+    name: "Entrega Final da Campanha"
+    agent: content-chief
+    action: compile_campaign
+    input:
+      calendar: "{{content_calendar}}"
+      pieces: "{{all_content_pieces}}"
+      review: "{{consistency_report}}"
+    format: "campaign_pack"
+
+outputs:
+  - content_calendar: "Calendario com datas e horarios de publicacao"
+  - all_pieces: "Todas as pecas produzidas (estrutura + copy + prompts + captions)"
+  - consistency_report: "Relatorio de consistencia da campanha"
+  - publishing_checklist: "Checklist de publicacao para cada peca"
+
+templates:
+  campaign_pack: |
+    # Campanha: {{campaign_goal}}
+    **Periodo:** {{duration}} | **Pecas:** {{pieces_count}} | **Plataformas:** {{platforms}}
+
+    ---
+    ## CALENDARIO DE PUBLICACAO
+    {{content_calendar.posting_schedule}}
+
+    ---
+    ## PECAS PRODUZIDAS
+    {{all_content_pieces}}
+
+    ---
+    ## CHECKLIST DE PUBLICACAO
+    {{publishing_checklist}}
+
+error_handling:
+  too_many_pieces:
+    threshold: 10
+    message: "Para mais de 10 pecas, recomendo produzir em lotes de 5 para manter qualidade."
+
+  conflicting_goals:
+    message: "Detectei objetivos conflitantes entre as pecas. Vou sugerir uma narrativa unificada."
+
+metadata:
+  estimated_time: "30-60 minutos (varia com quantidade de pecas)"
+  touch_points: "multiplos"
+  cross_squad: true
+  elicit: true
+  loops: true

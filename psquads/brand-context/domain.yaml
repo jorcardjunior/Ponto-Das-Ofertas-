@@ -1,0 +1,73 @@
+name: brand-context
+version: "1.0.0"
+short-title: "Brand Context"
+description: "Segundo cerebro da marca — contexto global injetado em todos os agentes via SYNAPSE. Garante que cada agente conheca marca, publico, produto e tom de voz sem repeticao."
+author: "Promptfy Squads"
+license: MIT
+
+aios:
+  minVersion: "4.0.0"
+  type: domain
+
+tags:
+  - brand
+  - context
+  - global
+  - synapse
+  - knowledge-base
+
+# SYNAPSE domain configuration
+synapse:
+  layer: L3                        # Project-level (acima de squads, abaixo de session)
+  scope: global                    # Injetado em qualquer agente ativado
+  priority: high                   # Sobrescreve defaults dos squads quando relevante
+  auto_load: true                  # Carregado automaticamente em todas sessoes
+
+# Arquivos de contexto carregados pelo SYNAPSE
+context_sources:
+  - path: BRAND_CONTEXT.md
+    inject_as: brand_identity
+    description: "Identidade, publico, produto, tom de voz e diretrizes da marca"
+
+# Regras de comportamento aplicadas a todos agentes
+rules:
+  - id: brand-aware-output
+    description: "Toda saida (texto, design, codigo, estrategia) deve respeitar o BRAND_CONTEXT.md"
+    enforcement: must
+    applies_to: [all_agents]
+
+  - id: tone-consistency
+    description: "Manter tom de voz definido em secao 4 do BRAND_CONTEXT.md"
+    enforcement: must
+    applies_to: [copy-squad, copy-master, brand-squad, storytelling, movement]
+
+  - id: forbidden-words
+    description: "Nao usar palavras listadas em secao 5 (Nunca usar)"
+    enforcement: must
+    applies_to: [all_agents]
+
+  - id: positioning-guard
+    description: "Nao contradizer posicionamento competitivo definido em secao 6"
+    enforcement: must
+    applies_to: [brand-squad, copy-squad, hormozi-squad, traffic-masters, c-level-squad]
+
+  - id: compliance-aware
+    description: "Respeitar restricoes legais/regulatorias listadas em secao 7"
+    enforcement: must
+    applies_to: [all_agents]
+
+# Comportamento de fallback
+fallback:
+  if_empty_field: "ignorar regra silenciosamente (nao bloquear execucao)"
+  if_missing_file: "alertar usuario uma vez por sessao e continuar"
+  if_conflict_with_squad_rule: "BRAND_CONTEXT.md tem precedencia"
+
+# Integracao com workflows existentes
+workflow_integration:
+  mode: extend                     # Estende workflows, nao substitui
+  pre_task_hook: inject_context    # Antes de cada task, injeta o contexto
+  post_task_validation: tone_check # Apos saida, valida coerencia de tom
+
+config:
+  extends: extend
+  break_workflows: false           # Garante compatibilidade com squads existentes

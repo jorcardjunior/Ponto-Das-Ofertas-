@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family={{FONT_FAMILY}}:wght@400;600;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: {{BG_COLOR}};
+    font-family: '{{FONT_FAMILY}}', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Detalhe de marca — barra lateral esquerda */
+  .brand-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 8px;
+    background: {{ACCENT_COLOR}};
+  }
+
+  /* Header — nome da marca */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: {{ACCENT_COLOR}};
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .slide-counter {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* Corpo do slide */
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 0 0 24px;
+  }
+
+  .category {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ACCENT_COLOR}};
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.1;
+    max-width: 900px;
+  }
+
+  .body-text {
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: 860px;
+  }
+
+  /* Highlights coloridos inline */
+  .highlight {
+    color: {{ACCENT_COLOR}};
+    font-weight: 700;
+  }
+
+  /* Footer — progress bar */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: {{PROGRESS_WIDTH}};
+    background: linear-gradient(90deg, {{ACCENT_COLOR}}, {{ACCENT_COLOR_DARK}});
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="brand-bar"></div>
+
+  <div class="header">
+    <span class="brand-name">{{BRAND_NAME}}</span>
+    <span class="slide-counter">{{SLIDE_NUMBER}} / {{TOTAL_SLIDES}}</span>
+  </div>
+
+  <div class="body">
+    <!-- CATEGORY TAG (opcional — remover se nao usar) -->
+    <span class="category">{{CATEGORY}}</span>
+
+    <!-- TITULO DO SLIDE -->
+    <h1 class="title">{{TITLE}}</h1>
+
+    <!-- CORPO DO SLIDE -->
+    <p class="body-text">{{BODY_TEXT}}</p>
+  </div>
+
+  <div class="footer">
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<!--
+VARIAVEIS PARA SUBSTITUIR:
+  {{FONT_FAMILY}}       → fonte do BRAND_CONTEXT (ex: Inter, Outfit, Montserrat)
+  {{BG_COLOR}}          → cor de fundo (ex: #0A0A0A)
+  {{ACCENT_COLOR}}      → cor de destaque da marca (ex: #FF6B35)
+  {{ACCENT_COLOR_DARK}} → versao escura do accent (ex: #E53E1A)
+  {{BRAND_NAME}}        → nome da marca
+  {{SLIDE_NUMBER}}      → numero do slide atual (ex: 02)
+  {{TOTAL_SLIDES}}      → total de slides (ex: 08)
+  {{PROGRESS_WIDTH}}    → porcentagem de progresso (ex: 25%)
+  {{CATEGORY}}          → tag de categoria (ex: ESTRATEGIA)
+  {{TITLE}}             → titulo do slide (copy do carousel-creator)
+  {{BODY_TEXT}}         → corpo do slide (copy do copy-chief)
+-->

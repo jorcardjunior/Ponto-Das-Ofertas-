@@ -1,0 +1,120 @@
+catalog: content-squad-routing
+version: "1.0"
+description: "Catalogo de roteamento para o content-squad. Define qual agente recebe cada tipo de requisicao."
+
+triggers:
+  # Carrossel
+  - keywords: ["carrossel", "carousel", "slides", "card"]
+    primary: carousel-creator
+    orchestrator: content-chief
+    workflow: wf-carousel
+    task: create-carousel
+    cross_squad:
+      story: story-chief
+      copy: copy-chief
+      visual: image-director
+      publish: social-publisher
+
+  # Reel / Video
+  - keywords: ["reel", "reels", "video", "roteiro", "script"]
+    primary: content-chief
+    task: create-reel-script
+    cross_squad:
+      copy: copy-chief
+      publish: social-publisher
+
+  # Imagem / Visual
+  - keywords: ["imagem", "image", "foto", "visual", "prompt", "dall-e", "canva"]
+    primary: image-director
+    cross_squad:
+      brand_visual: design-chief
+
+  # Publicacao / Caption
+  - keywords: ["publicar", "caption", "legenda", "hashtag", "horario", "agendar"]
+    primary: social-publisher
+
+  # Campanha completa
+  - keywords: ["campanha", "campaign", "producao", "semana", "mes", "calendario"]
+    primary: content-chief
+    workflow: wf-content-production
+
+  # Setup / Configuracao
+  - keywords: ["configurar", "setup", "api", "chave", "openai", "canva", "integrar"]
+    primary: content-chief
+    task: setup-integrations
+
+  # Diagnostico
+  - keywords: ["diagnostico", "diagnose", "saude", "status", "verificar"]
+    primary: content-chief
+    task: diagnose
+
+  # Revisao
+  - keywords: ["revisar", "review", "avaliar", "melhorar", "feedback"]
+    primary: content-chief
+    task: review
+
+copy_routing:
+  description: "Como o copy-chief roteia para especialistas por formato"
+  routes:
+    - format: sales
+      agents: [gary-halbert, dan-kennedy]
+      squad: copy-squad
+      criteria: "Conteudo focado em venda, oferta, conversao"
+
+    - format: educational
+      agents: [david-ogilvy]
+      squad: copy-squad
+      criteria: "Conteudo educativo, autoridade, informativo"
+
+    - format: storytelling
+      agents: [andre-chaperon]
+      squad: copy-squad
+      criteria: "Historia pessoal, jornada, conexao emocional"
+
+    - format: hooks
+      agents: [john-caples]
+      squad: copy-squad
+      criteria: "Titulos, hooks, abertura de qualquer formato"
+
+    - format: controversial
+      agents: [gary-halbert, content-chief]
+      squad: copy-squad
+      criteria: "Opiniao forte, posicionamento, polêmica estrategica"
+
+cross_squad_map:
+  description: "Quais squads o content-squad pode acionar"
+  squads:
+    storytelling-squad:
+      agents: [story-chief]
+      purpose: "Hook e arco narrativo do carrossel"
+      trigger: "Antes da estruturacao do carousel-creator"
+
+    copy-squad:
+      agents: [copy-chief, gary-halbert, dan-kennedy, david-ogilvy, andre-chaperon, john-caples]
+      purpose: "Copy de cada slide"
+      trigger: "Apos estruturacao pelo carousel-creator"
+
+    brand-squad:
+      agents: [design-chief]
+      purpose: "Identidade visual e paleta de cores"
+      trigger: "Quando brand context nao tem paleta definida"
+
+    hormozi-squad:
+      agents: [hormozi-chief]
+      purpose: "Validacao de oferta e posicionamento de produto"
+      trigger: "Carrosseis de vendas ou lancamentos"
+
+fallbacks:
+  description: "O que fazer quando squads externos nao estao disponiveis"
+  rules:
+    - when: "story-chief indisponivel"
+      action: "content-chief cria arco narrativo direto"
+
+    - when: "copy-chief indisponivel"
+      action: "content-chief escreve copy seguindo guias de tom do BRAND_CONTEXT"
+
+    - when: "image-director indisponivel"
+      action: "content-chief entrega prompts basicos com formula padrao"
+
+    - when: "dall-e api indisponivel"
+      action: "image-director entrega apenas instrucoes Canva"

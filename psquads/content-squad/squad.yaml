@@ -1,0 +1,90 @@
+name: content-squad
+version: "1.0.0"
+short-title: "Content Squad"
+description: "Squad de producao de conteudo — de marca ao carrossel, reel, post e publicacao. Orquestra copy, storytelling e design em um pipeline unico. Integra Canva, geradores de imagem IA e publicacao social."
+author: "Promptfy Squads"
+license: MIT
+slashPrefix: "content-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - content
+  - carousel
+  - social-media
+  - instagram
+  - video
+  - image-generation
+  - canva
+  - pipeline
+  - production
+
+components:
+  agents:
+    # Tier 0 — Orchestrator
+    - content-chief.md
+    # Tier 1 — Content Specialists
+    - carousel-creator.md
+    - image-director.md
+    - social-publisher.md
+  tasks:
+    - create-carousel.md
+    - create-reel-script.md
+    - setup-integrations.md
+    - diagnose.md
+    - review.md
+  workflows:
+    - wf-carousel.yaml
+    - wf-content-production.yaml
+  checklists:
+    - output-quality.md
+
+config:
+  extends: extend
+
+# Cross-squad delegation
+cross_squad_delegation:
+  narrative_hook:
+    squad: storytelling
+    agent: story-chief
+    triggers: ["hook", "narrativa", "arco", "abertura"]
+  copy_slides:
+    squad: copy-squad
+    agent: copy-chief
+    triggers: ["copy", "texto dos slides", "legenda", "caption"]
+  visual_direction:
+    squad: design-squad
+    agent: design-chief
+    triggers: ["visual", "cores", "tipografia", "layout"]
+  offer_carousel:
+    squad: hormozi-squad
+    agent: hormozi-chief
+    triggers: ["oferta", "venda", "preco", "cta de compra"]
+
+routing_matrix:
+  carousel:
+    primary: carousel-creator
+    secondary: content-chief
+    triggers: ["carrossel", "carousel", "slides", "sequencia de slides"]
+  reel:
+    primary: content-chief
+    secondary: carousel-creator
+    triggers: ["reel", "reels", "video curto", "roteiro de video"]
+  image:
+    primary: image-director
+    secondary: content-chief
+    triggers: ["imagem", "foto", "visual", "arte", "criativo"]
+  post:
+    primary: content-chief
+    secondary: social-publisher
+    triggers: ["post", "publicacao", "feed", "instagram", "linkedin"]
+  publish:
+    primary: social-publisher
+    secondary: content-chief
+    triggers: ["publicar", "agendar", "postar", "subir"]
+  setup:
+    primary: content-chief
+    secondary: null
+    triggers: ["configurar", "api key", "canva", "openai", "codex", "integrar"]

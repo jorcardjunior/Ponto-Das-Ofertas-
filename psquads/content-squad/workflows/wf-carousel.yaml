@@ -1,0 +1,155 @@
+id: wf-carousel
+title: "Workflow Completo de Carrossel"
+version: "1.0"
+squad: content-squad
+trigger: "*carrossel"
+entry_agent: content-chief
+
+description: >
+  Pipeline completo para criar um carrossel de alta performance.
+  Orquestra story-chief, copy-chief, image-director e social-publisher
+  para entregar estrutura, copy, prompts de imagem e caption prontos.
+
+inputs:
+  required:
+    - topic: "Tema do carrossel"
+    - platform: "Plataforma alvo (Instagram / LinkedIn)"
+  optional:
+    - format: "Formato do carrossel (default: detectado pelo story-chief)"
+    - cta_goal: "Objetivo do CTA (default: salvar)"
+    - brand_context: "Contexto de marca (default: lido do BRAND_CONTEXT.md)"
+
+stages:
+  - id: brand-loading
+    name: "Carregamento de Contexto da Marca"
+    agent: content-chief
+    action: read_brand_context
+    source: "brand-context/BRAND_CONTEXT.md"
+    on_empty: elicit_brand_basics
+    output: brand_context
+
+  - id: topic-elicitation
+    name: "Elicitacao do Tema"
+    agent: content-chief
+    action: elicit
+    questions:
+      - field: topic
+        prompt: "Sobre o que e esse carrossel?"
+      - field: format
+        prompt: "Qual o objetivo? [1]Educar [2]Vender [3]Storytelling [4]Lista [5]Opiniao"
+      - field: platform
+        prompt: "Onde vai publicar? Instagram / LinkedIn / Ambos"
+      - field: cta_goal
+        prompt: "O que quer que o usuario faca? [1]Salvar [2]Comentar [3]Seguir [4]Link bio [5]Comprar"
+    output: elicited_inputs
+
+  - id: narrative-arc
+    name: "Arco Narrativo"
+    agent: story-chief
+    squad: storytelling-squad
+    fallback: content-chief
+    input:
+      topic: "{{elicited_inputs.topic}}"
+      audience: "{{brand_context.publico_alvo}}"
+      format: "{{elicited_inputs.format}}"
+    output: narrative_arc
+    delivers:
+      - hook_principal
+      - beats_por_slide
+
+  - id: carousel-structure
+    name: "Estruturacao do Carrossel"
+    agent: carousel-creator
+    input:
+      hook: "{{narrative_arc.hook_principal}}"
+      beats: "{{narrative_arc.beats_por_slide}}"
+      format: "{{elicited_inputs.format}}"
+      platform: "{{elicited_inputs.platform}}"
+    output: carousel_structure
+    delivers:
+      - slide_structure
+      - hook_options_3
+      - tension_map
+
+  - id: copy-writing
+    name: "Redacao do Copy"
+    agent: copy-chief
+    squad: copy-squad
+    fallback: content-chief
+    routing_hint:
+      sales: [gary-halbert, dan-kennedy]
+      educational: [david-ogilvy]
+      storytelling: [andre-chaperon]
+      hooks: [john-caples]
+    input:
+      structure: "{{carousel_structure.slide_structure}}"
+      tone: "{{brand_context.tom_de_voz}}"
+      required_words: "{{brand_context.palavras_chave}}"
+      max_words_per_slide: 40
+    output: copy_per_slide
+
+  - id: visual-direction
+    name: "Direcao Visual"
+    agent: image-director
+    input:
+      copy: "{{copy_per_slide}}"
+      tone: "{{brand_context.tom_de_voz}}"
+      palette: "{{brand_context.paleta_cores}}"
+      platform: "{{elicited_inputs.platform}}"
+    output: visual_direction
+    delivers:
+      - dall_e_prompts
+      - canva_instructions
+      - visual_consistency_notes
+
+  - id: publishing-optimization
+    name: "Otimizacao para Publicacao"
+    agent: social-publisher
+    input:
+      topic: "{{elicited_inputs.topic}}"
+      platform: "{{elicited_inputs.platform}}"
+      cta: "{{elicited_inputs.cta_goal}}"
+      carousel_structure: "{{carousel_structure}}"
+    output: publishing_pack
+    delivers:
+      - caption_instagram
+      - caption_linkedin
+      - hashtag_sets
+      - recommended_time
+
+  - id: final-output
+    name: "Entrega Final"
+    agent: content-chief
+    action: compile_and_deliver
+    input:
+      carousel_structure: "{{carousel_structure}}"
+      copy: "{{copy_per_slide}}"
+      visuals: "{{visual_direction}}"
+      publishing: "{{publishing_pack}}"
+    format: "structured_markdown"
+
+outputs:
+  - slides_structure: "Estrutura completa slide a slide"
+  - copy_per_slide: "Copy finalizado de cada slide"
+  - image_prompts: "Prompts DALL-E por slide"
+  - canva_instructions: "Instrucoes para montar no Canva"
+  - caption: "Caption otimizado com hashtags"
+  - checklist: "Checklist pre-publicacao"
+
+error_handling:
+  missing_brand_context:
+    action: elicit_basics
+    message: "Brand Context nao configurado. Vou fazer algumas perguntas basicas."
+
+  squad_unavailable:
+    story-chief: "content-chief assume criacao do arco narrativo"
+    copy-chief: "content-chief cria copy direto"
+
+  api_unavailable:
+    dall_e: "Oferecer alternativa Canva com instrucoes detalhadas"
+
+metadata:
+  estimated_time: "10-15 minutos"
+  touch_points: 4
+  cross_squad: true
+  elicit: true

@@ -1,0 +1,116 @@
+squad: content-squad
+version: "1.0"
+
+defaults:
+  language: pt-BR
+  max_words_per_slide: 40
+  ideal_words_per_slide: 15
+  hook_max_words: 8
+
+platforms:
+  instagram:
+    carousel:
+      formats: ["1:1 (1080x1080)", "4:5 (1080x1350)"]
+      max_slides: 10
+      caption_hook_chars: 125
+      hashtags_range: [5, 15]
+      best_times: ["Ter-Qui 18h-21h"]
+    reel:
+      format: "9:16 (1080x1920)"
+      durations: [15, 30, 60]
+      hashtags_range: [3, 8]
+
+  linkedin:
+    carousel:
+      format: "PDF (1:1 ou 16:9)"
+      max_slides: 15
+      hashtags_range: [3, 5]
+      best_times: ["Ter-Qui 8h-10h", "Ter-Qui 17h-18h"]
+
+image_generation:
+  primary: dall-e
+  fallbacks:
+    - flux
+    - canva
+  dall_e:
+    model: dall-e-3
+    size: "1024x1024"
+    quality: standard
+  canva:
+    mcp_url: "${CANVA_MCP_URL}"
+
+carousel_formats:
+  educational:
+    slides_range: [7, 10]
+    structure: "Hook problema → Erros/dicas → Revelacao → CTA"
+  sales:
+    slides_range: [8, 12]
+    structure: "Hook dor → Agitacao → Solucao → Prova → Oferta → CTA"
+  storytelling:
+    slides_range: [6, 9]
+    structure: "Hook tensao → Jornada → Virada → Resultado → Licao → CTA"
+  list:
+    slides_range: [6, 11]
+    structure: "Hook promessa → Items com insight → Bonus → CTA"
+  controversy:
+    slides_range: [5, 8]
+    structure: "Hook opiniao → Por que erram → Minha visao → Prova → CTA"
+
+copy_routing:
+  sales:
+    primary: gary-halbert
+    secondary: dan-kennedy
+    squad: copy-squad
+  educational:
+    primary: david-ogilvy
+    squad: copy-squad
+  storytelling:
+    primary: andre-chaperon
+    squad: copy-squad
+  hooks:
+    primary: john-caples
+    squad: copy-squad
+  fallback: content-chief
+
+hashtag_strategy:
+  large:
+    count: [1, 3]
+    threshold: 100000
+  medium:
+    count: [3, 5]
+    range: [10000, 100000]
+  niche:
+    count: [3, 5]
+    threshold_max: 10000
+
+quality_thresholds:
+  publish_ready: 80
+  review_needed: 70
+  rework: 0
+
+brand_context:
+  path: "brand-context/BRAND_CONTEXT.md"
+  auto_load: true
+  required_fields:
+    - nome_marca
+    - tom_de_voz
+    - publico_alvo
+  optional_fields:
+    - palavras_chave
+    - palavras_proibidas
+    - paleta_cores
+
+integrations:
+  openai:
+    env_key: OPENAI_API_KEY
+    required_for: [image_generation, dall_e]
+  anthropic:
+    env_key: ANTHROPIC_API_KEY
+    required_for: [autonomous_agents]
+  canva:
+    env_key: CANVA_MCP_URL
+    default: "https://mcp.canva.com/mcp"
+    required_for: [canva_workflow]
+  replicate:
+    env_key: REPLICATE_API_KEY
+    required_for: [flux_generation]
