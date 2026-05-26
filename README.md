@@ -92,7 +92,7 @@ Leia o **[INSTALL.md](./INSTALL.md)** — guia passo a passo, sem terminal, sem 
 ### Para Quem Já Manja
 
 ```bash
-git clone https://github.com/{seu-user}/promptfy-os ~/Desktop/Promptfy-OS
+git clone https://github.com/rebelo2024/promptfyos ~/Desktop/Promptfy-OS
 cd ~/Desktop/Promptfy-OS
 code .
 # No Claude Code, digite: Olá Gaios

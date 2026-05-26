@@ -62,7 +62,7 @@ Aqui é a parte mágica. Você não precisa rodar nenhum comando no terminal.
 
 ```
 Por favor, instale o Promptfy OS na minha área de trabalho.
-Clone o repositório https://github.com/{SEU-USUARIO}/promptfy-os
+Clone o repositório https://github.com/rebelo2024/promptfyos
 para a pasta Promptfy-OS no Desktop. Depois me avise quando terminar.
 ```
 
