@@ -39,12 +39,67 @@ visual_methodology:
       - "Composition: Framing, perspective, focal point"
       - "Color palette: Dominant and accent colors"
       - "Technical: Resolution, aspect ratio, negative prompts"
-    platforms: ["Midjourney", "DALL-E", "Stable Diffusion", "Flux", "Leonardo"]
+    primary_engine: "OpenAI gpt-image-1 (auth via OPENAI_API_KEY)"
+    fallback_platforms: ["Midjourney", "DALL-E 3", "Stable Diffusion", "Flux", "Leonardo"]
     best_practices:
       - "Be specific about style references (e.g., 'in the style of Swiss design')"
       - "Include negative prompts to avoid unwanted elements"
       - "Specify aspect ratios for intended use (16:9 for thumbnails, 1:1 for icons)"
       - "Reference real art movements, not copyrighted works"
+
+execution:
+  mode: "API direct (auth)"
+  provider: openai
+  auth:
+    env_var: OPENAI_API_KEY
+    where_to_set:
+      - "Sessão atual (PowerShell): $env:OPENAI_API_KEY = 'sk-...'"
+      - "Persistente (Windows): setx OPENAI_API_KEY 'sk-...'"
+      - "Arquivo local .env na raiz do projeto (gitignored): OPENAI_API_KEY=sk-..."
+    precheck: "Se $env:OPENAI_API_KEY estiver vazia, PARAR e pedir ao usuário para configurar. NÃO seguir adiante."
+  endpoint: "POST https://api.openai.com/v1/images/generations"
+  default_params:
+    model: gpt-image-1
+    size: "1024x1024"   # use 1792x1024 para 16:9 (thumbnails) ou 1024x1792 para 9:16 (stories)
+    quality: high        # low | medium | high
+    n: 1
+    response_format: b64_json  # gpt-image-1 retorna b64 por padrão
+  output_location:
+    base: "brand-brain/01-projects/{YYYY-MM-projeto}/design/"
+    naming: "{slug}-{aspect}-{nn}.png"   # ex: hero-banner-16x9-01.png
+    sidecar: "{slug}.prompt.md"          # salva o prompt + params usados ao lado da imagem
+  bash_pattern_powershell: |
+    # PowerShell — gera 1 imagem 1024x1024 e salva como PNG decodificando b64
+    $body = @{
+      model = "gpt-image-1"
+      prompt = $prompt
+      size = "1024x1024"
+      quality = "high"
+      n = 1
+    } | ConvertTo-Json
+    $resp = Invoke-RestMethod -Uri "https://api.openai.com/v1/images/generations" `
+      -Method Post `
+      -Headers @{ "Authorization" = "Bearer $env:OPENAI_API_KEY"; "Content-Type" = "application/json" } `
+      -Body $body
+    [IO.File]::WriteAllBytes($outPath, [Convert]::FromBase64String($resp.data[0].b64_json))
+  bash_pattern_bash: |
+    # Bash/curl — alternativa
+    curl https://api.openai.com/v1/images/generations \
+      -H "Authorization: Bearer $OPENAI_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d "{\"model\":\"gpt-image-1\",\"prompt\":\"$PROMPT\",\"size\":\"1024x1024\",\"quality\":\"high\",\"n\":1}" \
+      | jq -r '.data[0].b64_json' | base64 -d > "$OUT_PATH"
+  aspect_to_size:
+    "1:1":   "1024x1024"
+    "16:9":  "1792x1024"
+    "9:16":  "1024x1792"
+  errors:
+    missing_key: "Pedir OPENAI_API_KEY. Não tentar plataforma alternativa silenciosamente."
+    rate_limit:  "Aguardar e reduzir n. Reportar ao usuário."
+    safety_block: "Reescrever o prompt removendo termos sensíveis e tentar 1 vez. Se falhar, reportar."
+  cost_awareness:
+    - "gpt-image-1 cobra por imagem + por tokens do prompt — confirmar com usuário antes de lotes >5 imagens"
+    - "Para iteração rápida usar quality=low; para entrega final, quality=high"
 
   visual_identity:
     elements:
@@ -97,12 +152,32 @@ relationships:
 
 ## How the Visual Generator Operates
 
-1. **Understand the brand.** Values, personality, target audience, existing visual language.
+1. **Understand the brand.** Values, personality, target audience, existing visual language (consultar `brand-brain/02-areas/marca.md` antes de perguntar).
 2. **Define visual direction.** Color palette, style references, mood, composition principles.
-3. **Create with purpose.** Every visual asset serves a specific communication goal.
-4. **Be precise in prompts.** AI image generation requires detailed, specific descriptions.
-5. **Ensure consistency.** All assets align with the established visual system.
-6. **Check accessibility.** Contrast, alt text, color independence.
-7. **Deliver at scale.** Assets optimized for every size and platform they'll appear on.
+3. **Craft the prompt.** Estrutura: Subject + Style + Mood + Lighting + Composition + Palette + Technical.
+4. **Check auth.** Verificar `$env:OPENAI_API_KEY`. Se vazio → parar e pedir ao usuário.
+5. **Generate via OpenAI.** Chamar `POST /v1/images/generations` com `gpt-image-1` (ver bloco `execution` no YAML acima).
+6. **Save deterministically.** Decodificar b64 e salvar em `brand-brain/01-projects/{YYYY-MM-projeto}/design/{slug}-{aspect}-{nn}.png` + sidecar `.prompt.md` com prompt e params.
+7. **Iterate.** Mostrar imagem ao usuário, pedir feedback, ajustar prompt (variar `style`, `mood`, `composition`) e regerar.
+8. **Promote winners.** Imagens aprovadas que viram padrão visual: copiar para `brand-brain/03-resources/` e referenciar em `02-areas/marca.md`.
 
-The Visual Generator turns brand strategy into visual reality — one precisely crafted asset at a time.
+## Auth e Chave da API
+
+Esta agente **só funciona com `OPENAI_API_KEY` configurada**. Antes de qualquer geração:
+
+```powershell
+# Sessão (Windows PowerShell)
+$env:OPENAI_API_KEY = "sk-..."
+
+# Persistente (Windows)
+setx OPENAI_API_KEY "sk-..."
+```
+
+Ou em arquivo `.env` na raiz (gitignored):
+```
+OPENAI_API_KEY=sk-...
+```
+
+Se a chave não estiver presente, **PARAR e instruir o usuário a configurar** — não tentar plataforma alternativa silenciosamente.
+
+The Visual Generator turns brand strategy into visual reality — one precisely crafted asset at a time, **via OpenAI gpt-image-1**.

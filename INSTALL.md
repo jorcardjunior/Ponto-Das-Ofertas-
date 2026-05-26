@@ -95,6 +95,34 @@ Olá Gaios
 
 ---
 
+## PASSO 6 — (Opcional, mas recomendado) Habilite Geração de Imagens
+
+O Promptfy OS gera **logos, capas, thumbnails e ativos visuais** usando o modelo **`gpt-image-1` da OpenAI**. Para ativar:
+
+1. Crie uma chave em https://platform.openai.com/api-keys
+2. Configure a variável de ambiente:
+
+**Windows (PowerShell, sessão atual):**
+```powershell
+$env:OPENAI_API_KEY = "sk-..."
+```
+
+**Windows (persistente — sobrevive ao reboot):**
+```powershell
+setx OPENAI_API_KEY "sk-..."
+```
+
+**Mac/Linux:**
+```bash
+export OPENAI_API_KEY="sk-..."
+```
+
+Ou, mais simples: copie `.env.example` para `.env` na raiz do projeto e preencha a chave (o `.env` já está gitignored — sua chave nunca vai pro repositório).
+
+> **Sem a chave** o Gaios pula a etapa visual e segue só com copy + estratégia. Você pode habilitar depois a qualquer momento.
+
+---
+
 ## O Que Esperar Daqui em Diante
 
 ```
