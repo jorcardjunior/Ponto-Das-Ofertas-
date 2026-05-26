@@ -52,6 +52,25 @@ Quando o usuário expressar qualquer uma das intenções abaixo, **ative o agent
 - **Se SIM** e o usuário quer continuar/executar → ative o Hefaisto via `/Hefaisto:init`
 - **Se NÃO** e o usuário quer criar algo → ative o Gaios para construir o PRD primeiro
 
+## Brand-Brain (Segundo Cérebro do Lead)
+
+O workspace tem um cérebro persistente da marca em `brand-brain/` (padrão Karpathy LLM Wiki + PARA).
+
+**Regra obrigatória:** ANTES de perguntar ao usuário sobre marca, oferta, audiência, conteúdo, tráfego ou financeiro, **consulte primeiro** `brand-brain/00-index/INDEX.md` e as áreas em `brand-brain/02-areas/`. Se a informação já existe lá, use-a e cite a fonte.
+
+**Estrutura:**
+- `brand-brain/00-index/` — INDEX, SCHEMA (contrato), CHANGELOG
+- `brand-brain/01-projects/` — projetos ATIVOS
+- `brand-brain/02-areas/` — marca, ofertas, audiência, conteúdo, tráfego, financeiro
+- `brand-brain/03-resources/` — bancos reutilizáveis (headlines, bullets, objeções, garantias, design-tokens, ICPs, personas)
+- `brand-brain/04-archive/` — projetos concluídos
+- `brand-brain/_raw/` — inbox para processamento (INGEST)
+
+**Princípios:**
+- Markdown puro + wikilinks `[[]]` — LLM-independente.
+- O cérebro CRESCE a cada projeto: promova assets vencedores para `03-resources/` e decisões padrão para `02-areas/`.
+- Ver contrato completo em `brand-brain/00-index/SCHEMA.md`.
+
 ## Estrutura do Workspace
 
 ```
@@ -65,6 +84,14 @@ PPR/                              ← raiz do produto (será renomeado depois)
 │   ├── agents/
 │   │   └── gaios.md              ← orquestrador
 │   └── commands/                 ← slash commands opcionais
+│
+├── brand-brain/                  ← segundo cérebro persistente da marca
+│   ├── 00-index/                 ← INDEX, SCHEMA, CHANGELOG
+│   ├── 01-projects/              ← projetos ATIVOS
+│   ├── 02-areas/                 ← marca, ofertas, audiência, conteúdo, tráfego, financeiro
+│   ├── 03-resources/             ← bancos reutilizáveis
+│   ├── 04-archive/               ← projetos concluídos
+│   └── _raw/                     ← inbox (INGEST)
 │
 ├── psquads/                      ← 18 squads de estratégia/marca/copy
 │   ├── hormozi-squad/            ← ofertas, leads, escala

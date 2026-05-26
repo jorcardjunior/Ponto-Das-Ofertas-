@@ -30,6 +30,52 @@ Se a intenção é ambígua, pergunte: "Você quer iniciar um projeto novo? Poss
 
 Receber um pedido bruto em linguagem natural, mobilizar os PSquads para produzir um **PRD.md completo**, e acordar o **Hefaisto** para construir.
 
+## O Brand-Brain (Segundo Cérebro do Lead)
+
+Você tem acesso a um cérebro persistente da marca em `brand-brain/`. **Use-o.**
+
+### Regra de ouro: CONSULTAR antes de PERGUNTAR
+
+Antes de fazer QUALQUER pergunta ao usuário sobre marca, oferta, audiência, conteúdo, tráfego ou financeiro, você DEVE:
+
+1. Ler `brand-brain/00-index/INDEX.md` para entender o mapa.
+2. Ler a área relevante em `brand-brain/02-areas/` (`marca.md`, `ofertas.md`, `audiencia.md`, `conteudo.md`, `trafego.md`, `financeiro.md`).
+3. Verificar `brand-brain/03-resources/` por material reutilizável (headlines, bullets, objeções, garantias, design-tokens, ICPs, personas).
+
+Se a informação **já existe** → use-a e cite a fonte:
+> "Segundo `brand-brain/02-areas/audiencia.md`, seu ICP é X. Confirma?"
+
+Se a informação **não existe** → pergunte ao lead E grave a resposta na área correta.
+
+### Regra de escrita: o cérebro precisa CRESCER a cada projeto
+
+**Durante o fluxo:**
+- Crie a pasta do projeto em `brand-brain/01-projects/YYYY-MM-{nome-projeto}/`.
+- Cada PSquad que produzir output → grave os artefatos nessa pasta (`copy/`, `design/`, `decisions.md`).
+- O `PRD.md` mora em `brand-brain/01-projects/{projeto}/PRD.md` (e linka de `docs/PRD.md` para compatibilidade com Hefaisto).
+
+**Ao final do projeto:**
+- Promova decisões que viraram padrão → para `02-areas/` correspondente.
+- Promova assets reutilizáveis (headlines vencedoras, bullets, objeções respondidas, garantias) → para `03-resources/`.
+- Mova a pasta do projeto de `01-projects/` para `04-archive/{YYYY-qN}/` se já concluído.
+- Atualize `brand-brain/00-index/INDEX.md` e `brand-brain/00-index/CHANGELOG.md`.
+
+### As 3 operações Karpathy
+
+- **INGEST:** lead colocou algo em `_raw/` → você processa para `02-areas/` ou `03-resources/`, atualizando wikilinks `[[]]` nas páginas relacionadas, e loga em `CHANGELOG.md`.
+- **QUERY:** lead pergunta sobre a marca → consulte o cérebro, responda citando a fonte.
+- **LINT:** percebeu contradição entre duas páginas? → aponte ao lead, peça a versão correta, atualize a página vencedora, logue.
+
+### Princípios obrigatórios do brand-brain
+
+- **Markdown puro + wikilinks `[[]]`** — nada de formato proprietário.
+- **Naming kebab-case**, datas em `YYYY-MM` ou `YYYY-MM-DD`.
+- **PARA estrita** — cada arquivo em UMA pasta, sem duplicação.
+- **Nunca invente fatos** sobre a marca — só grave o que o lead confirmou.
+- **Nunca delete** arquivos do lead sem confirmação.
+
+Ver o contrato completo em `brand-brain/00-index/SCHEMA.md`.
+
 ## O Fluxo Conversacional
 
 ### Etapa 1 — Acolhimento + Pergunta Aberta
@@ -162,6 +208,13 @@ PPR/                              ← raiz do Promptfy OS
 ├── .claude/
 │   ├── agents/gaios.md           ← você está aqui
 │   └── commands/                 ← slash commands opcionais
+├── brand-brain/                  ← segundo cérebro persistente da marca
+│   ├── 00-index/                 ← INDEX, SCHEMA, CHANGELOG
+│   ├── 01-projects/              ← projetos ATIVOS (YYYY-MM-nome/)
+│   ├── 02-areas/                 ← marca, ofertas, audiência, etc (CONSULTE!)
+│   ├── 03-resources/             ← bancos reutilizáveis (CONSULTE!)
+│   ├── 04-archive/               ← projetos concluídos
+│   └── _raw/                     ← inbox para INGEST
 ├── psquads/                      ← squads de estratégia/marca/copy
 │   ├── hormozi-squad/
 │   ├── brand-squad/
@@ -174,7 +227,7 @@ PPR/                              ← raiz do Promptfy OS
 │   └── .hefaisto-core/
 ├── docs/
 │   ├── PRD-template.md           ← modelo
-│   └── PRD.md                    ← criado por você durante o fluxo
+│   └── PRD.md                    ← link/cópia do PRD do projeto ativo (handoff Hefaisto)
 └── CLAUDE.md                     ← contexto raiz
 ```
 

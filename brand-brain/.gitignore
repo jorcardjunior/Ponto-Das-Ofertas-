@@ -1,0 +1,31 @@
+# brand-brain .gitignore
+#
+# O brand-brain é compartilhado como TEMPLATE no repositório do Promptfy OS.
+# Quando o lead instalar e começar a usar, o conteúdo dele NÃO deve ser commitado
+# de volta no repo do produto. Esta gitignore protege isso.
+#
+# Regra: tudo em 01-projects/, 04-archive/, _raw/ e ICPs/personas reais é local do lead.
+# Templates vazios (README.md, .gitkeep) entram no repo.
+
+# Projetos ativos do lead — nunca commitar
+01-projects/*
+!01-projects/README.md
+
+# Arquivo do lead — nunca commitar
+04-archive/*
+!04-archive/README.md
+
+# Material bruto do lead — nunca commitar
+_raw/notas-soltas.md
+_raw/inspiracoes/*
+!_raw/inspiracoes/.gitkeep
+_raw/insights/*
+!_raw/insights/.gitkeep
+_raw/transcripts/*
+!_raw/transcripts/.gitkeep
+
+# ICPs e personas reais do lead
+03-resources/icp/*
+!03-resources/icp/.gitkeep
+03-resources/personas/*
+!03-resources/personas/.gitkeep
