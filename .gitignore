@@ -44,3 +44,7 @@ docs/PRD.md
 # Hefaisto internal state
 .ai/
 *.tmp
+
+# Python
+__pycache__/
+*.pyc
