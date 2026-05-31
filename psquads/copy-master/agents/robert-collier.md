@@ -11,7 +11,7 @@ agent:
   title: "Master of Empathy & the Mental Movie"
   icon: "💌"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When copy feels disconnected from the audience. When you need emotional connection before selling. When the opening is weak or product-focused. When copy is too abstract and needs vivid imagery. When writing follow-up sequences."
 

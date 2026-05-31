@@ -27,7 +27,7 @@ Ler do BRAND_CONTEXT.md:
 - `ACCENT_COLOR_DARK` → versao escura do accent
 - `BRAND_NAME` → nome da marca
 
-Do carousel-creator / copy-chief:
+Do carousel-creator / copy-master-chief:
 - `CATEGORY` → categoria do slide (ex: ESTRATEGIA)
 - `TITLE` → titulo do slide
 - `BODY_TEXT` → corpo do slide

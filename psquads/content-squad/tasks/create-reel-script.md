@@ -23,7 +23,7 @@ outputs:
 
 ### ETAPA 1 — Contexto da Marca
 ```
-Ler: brand-context/BRAND_CONTEXT.md
+Ler: brand-brain/00-index/INDEX.md
 Extrair:
   - nome_marca
   - tom_de_voz

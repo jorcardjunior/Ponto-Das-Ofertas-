@@ -11,7 +11,7 @@ agent:
   title: "The One Sentence Persuasion Master — 5 Emotional Triggers"
   icon: "🗝️"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Persuasion Scientists"
   whenToUse: "When copy needs deep emotional resonance beyond logic and features. When you need to connect with prospects at the most primal psychological level. When writing manifestos, movement-building copy, or tribal identity pieces. When existing copy is technically sound but lacks emotional pull. When you need to understand WHY people follow leaders, join movements, or buy impulsively."
 

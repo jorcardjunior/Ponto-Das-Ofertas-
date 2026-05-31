@@ -61,7 +61,7 @@ Usuario → content-chief
               ↓
          carousel-creator (estrutura)
               ↓
-         copy-chief → especialista       ← copy-squad
+         copy-master-chief → especialista  ← copy-master
               ↓
          image-director (prompts DALL-E / Canva)
               ↓
@@ -111,7 +111,7 @@ Para configurar: `@content-chief *configurar`
 O content-squad delega para outros squads quando disponiveis:
 
 - **storytelling-squad** → arco narrativo e hook
-- **copy-squad** → copy especializado por formato
+- **copy-master** → copy especializado por formato
 - **brand-squad** → identidade visual e paleta
 - **hormozi-squad** → validacao de oferta (carrosseis de vendas)
 

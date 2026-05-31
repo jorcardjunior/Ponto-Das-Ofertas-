@@ -24,7 +24,7 @@ outputs:
 
 ### ETAPA 1 — Contexto da Marca
 ```
-Ler: brand-context/BRAND_CONTEXT.md
+Ler: brand-brain/00-index/INDEX.md
 Extrair:
   - nome_marca
   - publico_alvo + dores principais
@@ -82,7 +82,7 @@ Entrega:
 
 ### ETAPA 5 — Copy pelos Agentes do Copy-Squad
 
-Content-chief envia para @copy-chief:
+Content-chief envia para @copy-master-chief:
 ```
 Estrutura: [estrutura do carousel-creator]
 Tom de voz: [do BRAND_CONTEXT]

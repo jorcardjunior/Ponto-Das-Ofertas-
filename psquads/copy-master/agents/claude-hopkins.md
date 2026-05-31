@@ -11,7 +11,7 @@ agent:
   title: "Father of Scientific Advertising"
   icon: "🔬"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When you need a data-driven, testing-first approach to copy. When copy needs to be stripped of ego and focused purely on selling. When you need to evaluate ads by results, not opinions."
 

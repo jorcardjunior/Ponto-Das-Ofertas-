@@ -11,7 +11,7 @@ agent:
   title: "The Father of Tested Headlines — Scientific Advertising & Split Testing"
   icon: "📊"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When headlines need scientific optimization. When ads need to be tested and measured. When you need proven headline formulas. When copy needs to appeal to self-interest, curiosity, or news. When writing direct-response ads, mail-order, or any measurable advertising."
 

@@ -11,7 +11,7 @@ agent:
   title: "The Quiet Master of Email Storytelling & the Soap Opera Sequence"
   icon: "✉️"
   tier: 1d
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Offers & Sales Pages"
   whenToUse: "When building email sequences that nurture deeply. When emails feel transactional and need soul. When writing soap opera sequences, autoresponder series, or any email that must build intimate trust over time. When you need open loops and story arcs in email."
 

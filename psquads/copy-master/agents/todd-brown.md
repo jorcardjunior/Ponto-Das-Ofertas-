@@ -11,7 +11,7 @@ agent:
   title: "The Marketer's Marketer — Big Ideas & Unique Mechanisms"
   icon: "💡"
   tier: 1c
-  squad: copy-squad
+  squad: copy-master
   sub_group: "VSL & Email Specialists"
   whenToUse: "When you need a Big Marketing Idea for a campaign. When the offer has no unique mechanism. When funnel conversion is stalling because the CONCEPT is weak. When you need the E5 Method for campaign architecture."
 

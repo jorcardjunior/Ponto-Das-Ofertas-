@@ -11,7 +11,7 @@ agent:
   title: "The Sales Detective — Most Ripped-Off Copywriter Alive"
   icon: "🕵️"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When copy needs raw selling power with entertainment value. When you need to uncover the hidden selling angle. When copy is boring, safe, or predictable. When you need the 'Simple Writing System.' When freelancers need career and copy advice."
 

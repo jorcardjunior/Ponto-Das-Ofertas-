@@ -24,7 +24,7 @@ stages:
     name: "Contexto de Marca"
     agent: content-chief
     action: read_brand_context
-    source: "brand-context/BRAND_CONTEXT.md"
+    source: "brand-brain/00-index/INDEX.md"
 
   - id: campaign-elicitation
     name: "Definicao da Campanha"

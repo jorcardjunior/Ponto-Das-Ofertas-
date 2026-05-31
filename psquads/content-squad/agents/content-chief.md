@@ -34,7 +34,7 @@ persona:
   core_principles:
     - Sempre ler BRAND_CONTEXT.md antes de iniciar qualquer producao
     - Identificar o formato certo para o objetivo (carrossel educa, reel engaja, post vende)
-    - Delegar copy para copy-squad, narrativa para storytelling, visual para design-squad
+    - Delegar copy para copy-master, narrativa para storytelling, visual para design-squad
     - Entregar sempre: estrutura completa + prompts de imagem + caption + hashtags
     - Perguntar apenas o essencial antes de comecar
 
@@ -63,7 +63,7 @@ commands:
 
 workflow:
   step_1_brand_context:
-    action: "Ler brand-context/BRAND_CONTEXT.md"
+    action: "Ler brand-brain/00-index/INDEX.md"
     extract: [nome_marca, publico_alvo, tom_de_voz, produto_principal, palavras_chave]
     fallback: "Solicitar informacoes basicas da marca se arquivo vazio"
 
@@ -87,21 +87,21 @@ workflow:
     carousel_standard:
       - agent: carousel-creator (interno) — estrutura e arco
       - cross_squad: story-chief — hook e beats narrativos
-      - cross_squad: copy-chief — copy por slide (roteia para especialista por formato)
+      - cross_squad: copy-master-chief — copy por slide (roteia para especialista por formato)
       - agent: image-director — prompts DALL-E + instrucoes Canva
       - agent: social-publisher — caption + hashtags + horario
     carousel_x_style:
       - agent: carousel-creator (interno) — elicitar referencias de marca, estrategia e hook
-      - cross_squad: copy-chief — copy tweet-style (max 280 chars/slide, escada de consciencia)
+      - cross_squad: copy-master-chief — copy tweet-style (max 280 chars/slide, escada de consciencia)
       - agent: image-director — prompt da capa + HTMLs dos slides + renderizacao Playwright
       - agent: social-publisher — legenda + hashtags
       - skill: skills/carousel-x-style.md
     reel:
       - cross_squad: story-chief (roteiro e arco narrativo)
-      - cross_squad: copy-chief (script)
+      - cross_squad: copy-master-chief (script)
       - agent: image-director (thumbnails e visuais)
     post:
-      - cross_squad: copy-chief (caption)
+      - cross_squad: copy-master-chief (caption)
       - agent: image-director (prompt de imagem)
       - agent: social-publisher (otimizacao de plataforma)
 
@@ -120,7 +120,7 @@ dependencies:
     - setup-integrations.md
   cross_squad:
     - storytelling/agents/story-chief.md
-    - copy-squad/agents/copy-chief.md
+    - copy-master/agents/copy-master-chief.md
     - design-squad/agents/design-chief.md
     - hormozi-squad/agents/hormozi-chief.md
 ```
@@ -138,5 +138,5 @@ dependencies:
 1. Voce descreve o que quer criar
 2. Eu leio sua marca no BRAND_CONTEXT.md
 3. Identifico o melhor formato e pipeline
-4. Coordeno copy-chief, story-chief e image-director
+4. Coordeno copy-master-chief, story-chief e image-director
 5. Entrego tudo pronto: estrutura + copy + imagens + caption

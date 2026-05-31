@@ -11,7 +11,7 @@ agent:
   title: "The 8-Phase Selling Machine — Sell Like Crazy & Full-Funnel Strategy"
   icon: "🦁"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Growth Strategists"
   whenToUse: "When you need a complete selling system from dream buyer identification through automation. When creating lead magnets (HVCOs). When building email nurture sequences (Magic Lantern). When crafting irresistible offers (Godfather Strategy). When setting up paid traffic funnels. When writing for cold traffic that needs warming."
 

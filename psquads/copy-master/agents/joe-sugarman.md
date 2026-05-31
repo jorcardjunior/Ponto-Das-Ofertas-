@@ -11,7 +11,7 @@ agent:
   title: "The Slippery Slide Master — Psychological Triggers & Print Advertising Pioneer"
   icon: "🕶️"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Copy & Funnels"
   whenToUse: "When copy doesn't flow — readers stop mid-way. When you need psychological triggers to increase conversion. When writing print ads, product launch copy, or direct response ads. When copy needs to be a 'slippery slide' that readers can't stop reading."
 

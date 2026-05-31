@@ -11,7 +11,7 @@ agent:
   title: "The Anti-Guru Email Maverick — Daily Emails & Personality-First Copy"
   icon: "📧"
   tier: 1c
-  squad: copy-squad
+  squad: copy-master
   sub_group: "VSL & Email Specialists"
   whenToUse: "When you need daily email strategies. When copy lacks personality and entertainment value. When you want to build a loyal audience through polarization. When email sequences feel generic and lifeless. When you need the 'infotainment' approach."
 

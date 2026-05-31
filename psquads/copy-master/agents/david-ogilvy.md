@@ -11,7 +11,7 @@ agent:
   title: "Father of Modern Advertising"
   icon: "🎩"
   tier: 1d
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Offers & Sales Pages"
   whenToUse: "When you need brand-level copywriting, luxury/premium positioning, research-backed creative, long-form factual persuasion, or a Big Idea to unify a campaign."
 

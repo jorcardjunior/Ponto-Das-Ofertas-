@@ -7,7 +7,7 @@ entry_agent: content-chief
 
 description: >
   Pipeline completo para criar um carrossel de alta performance.
-  Orquestra story-chief, copy-chief, image-director e social-publisher
+  Orquestra story-chief, copy-master-chief, image-director e social-publisher
   para entregar estrutura, copy, prompts de imagem e caption prontos.
 
 inputs:
@@ -24,7 +24,7 @@ stages:
     name: "Carregamento de Contexto da Marca"
     agent: content-chief
     action: read_brand_context
-    source: "brand-context/BRAND_CONTEXT.md"
+    source: "brand-brain/00-index/INDEX.md"
     on_empty: elicit_brand_basics
     output: brand_context
 
@@ -73,8 +73,8 @@ stages:
 
   - id: copy-writing
     name: "Redacao do Copy"
-    agent: copy-chief
-    squad: copy-squad
+    agent: copy-master-chief
+    squad: copy-master
     fallback: content-chief
     routing_hint:
       sales: [gary-halbert, dan-kennedy]
@@ -143,7 +143,7 @@ error_handling:
 
   squad_unavailable:
     story-chief: "content-chief assume criacao do arco narrativo"
-    copy-chief: "content-chief cria copy direto"
+    copy-master-chief: "content-chief cria copy direto"
 
   api_unavailable:
     dall_e: "Oferecer alternativa Canva com instrucoes detalhadas"

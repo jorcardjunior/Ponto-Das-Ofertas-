@@ -7,7 +7,7 @@ title: "Diagnostico do Content Squad"
 agent: content-chief
 elicit: false
 inputs:
-  - scope: "O que diagnosticar (squad, integracoes, brand-context, tudo)"
+  - scope: "O que diagnosticar (squad, integracoes, brand-brain, tudo)"
 outputs:
   - health_report: "Relatorio de saude do squad"
   - issues: "Problemas encontrados e como resolver"
@@ -19,7 +19,7 @@ outputs:
 ### VERIFICACAO 1 — Brand Context
 
 ```
-Ler: brand-context/BRAND_CONTEXT.md
+Ler: brand-brain/00-index/INDEX.md
 
 Verificar:
   [ ] Arquivo existe
@@ -67,7 +67,7 @@ Status por agente:
 ```
 Verificar squads necessarios para delegacao:
 
-  [ ] copy-squad presente no projeto
+  [ ] copy-master presente no projeto
   [ ] storytelling-squad ou story-chief acessivel
   [ ] brand-squad presente (para design-chief)
 
@@ -114,7 +114,7 @@ Status: [COMPLETO / PARCIAL / VAZIO]
 - social-publisher: [✅ / ❌]
 
 ### Cross-Squad
-- copy-squad: [✅ / ❌ ausente — copy-chief operara com agentes internos]
+- copy-master: [✅ / ❌ ausente — copy-master-chief operara com agentes internos]
 - storytelling-squad: [✅ / ❌]
 
 ---
@@ -129,4 +129,4 @@ Status: [COMPLETO / PARCIAL / VAZIO]
 ## Notas
 - Este diagnostico nao faz alteracoes — apenas relata o estado atual
 - Para configurar integracoes: @content-chief *configurar
-- Para preencher brand context: editar brand-context/BRAND_CONTEXT.md
+- Para preencher brand context: editar brand-brain/00-index/INDEX.md

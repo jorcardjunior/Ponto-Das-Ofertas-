@@ -11,7 +11,7 @@ agent:
   title: "The USP Master — Unique Selling Proposition & Repetition"
   icon: "🎯"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When a product needs a clear, differentiated positioning. When the core message is muddled or tries to say too many things. When advertising needs to cut through noise with ONE powerful claim. When copy needs simplification and focus. When a brand needs a memorable, repeatable proposition."
 

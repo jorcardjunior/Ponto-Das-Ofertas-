@@ -11,7 +11,7 @@ agent:
   title: "The Frame Control Master — STRONG Method, Crocodile Brain & Pitch Architecture"
   icon: "🐊"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Persuasion Scientists"
   whenToUse: "When copy needs to control the psychological frame. When pitching high-ticket offers, investors, or sophisticated buyers. When the reader feels like they have the power and you need to flip the dynamic. When writing pitch decks, investor presentations, or premium positioning copy. When sales copy needs to bypass the primitive brain's defense filters. When you need to position yourself as the prize, not the supplicant."
 

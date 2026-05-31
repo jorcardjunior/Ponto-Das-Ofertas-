@@ -11,7 +11,7 @@ agent:
   title: "The Funnel Architect — Value Ladders, Hooks & Epiphany Bridges"
   icon: "🔻"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Copy & Funnels"
   whenToUse: "When building sales funnels, webinar scripts, launch sequences, or lead magnets. When you need Value Ladder strategy, Hook-Story-Offer framework, or Epiphany Bridge storytelling. When you need to structure an entire customer journey from first click to high-ticket."
 

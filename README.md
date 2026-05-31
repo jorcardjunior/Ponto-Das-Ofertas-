@@ -31,7 +31,7 @@ O Promptfy OS opera em 3 camadas que trabalham como um time:
 ```
 🌱 GAIOS       —  A mente. Conversa com você e orquestra tudo.
                   ↓
-👥 PSQUADS     —  O conselho. 18 squads especializados em marca,
+👥 PSQUADS     —  O conselho. 13 squads especializados em marca,
                   copy, ofertas, growth, design, storytelling.
                   ↓
 🔥 HEFAISTO    —  As mãos. Constrói o código de forma autônoma,
@@ -114,7 +114,7 @@ PPR/                            ← Promptfy OS (será renomeado em produção)
 │   │   └── gaios.md            ← agente orquestrador
 │   └── commands/
 │
-├── psquads/                    ← 18 squads de estratégia/marca/copy
+├── psquads/                    ← 13 squads de estratégia/marca/copy
 │   ├── hormozi-squad/
 │   ├── brand-squad/
 │   ├── design-squad/
@@ -189,7 +189,7 @@ DIA 2
 Único agente que o usuário precisa conhecer. Documentado em [`.claude/agents/gaios.md`](./.claude/agents/gaios.md).
 
 ### PSquads — Squads Especialistas
-18 squads, cada um com agentes próprios e metodologias específicas. Veja [`psquads/README.md`](./psquads/README.md).
+13 squads, cada um com agentes próprios e metodologias específicas. Veja [`psquads/README.md`](./psquads/README.md).
 
 ### Hefaisto — Motor de Execução
 Framework autônomo de engenharia. 5 agentes internos (Nova, Sage, Aria, Dex, Quinn). Veja [`hefaisto/README.md`](./hefaisto/README.md).

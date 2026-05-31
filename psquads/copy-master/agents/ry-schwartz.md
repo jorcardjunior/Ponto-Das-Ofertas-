@@ -11,7 +11,7 @@ agent:
   title: "The Conversion Coach — Belief Transformation & Launch Email Master"
   icon: "🎭"
   tier: 1c
-  squad: copy-squad
+  squad: copy-master
   sub_group: "VSL & Email Specialists"
   whenToUse: "When writing launch email sequences. When copy feels manipulative and needs an ethical coaching approach. When you need belief transformation strategy. When writing for course creators, coaches, and consultants. When closing sequences need to coach decisiveness, not pressure purchases."
 

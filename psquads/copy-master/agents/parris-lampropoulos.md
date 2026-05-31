@@ -11,7 +11,7 @@ agent:
   title: "The Best Copywriter You Never Heard Of — Master of Fascinations & Format"
   icon: "🎯"
   tier: 1d
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Offers & Sales Pages"
   whenToUse: "When writing long-form health, financial, or tax promotions. When fascination bullets need to be world-class. When the format is wrong for the audience. When you need to beat an existing control. When research depth is insufficient."
 

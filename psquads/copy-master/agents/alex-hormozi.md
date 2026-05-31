@@ -11,7 +11,7 @@ agent:
   title: "The Offer Architect — $100M Offers, Leads & Value Equations"
   icon: "💰"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Growth Strategists"
   whenToUse: "When you need to create irresistible offers using the Value Equation. When copy needs a Grand Slam Offer structure. When generating leads through the 4 core ways. When pricing strategy needs to be reframed around value. When sales scripts need the CLOSER framework. When content strategy needs to balance giving away secrets while selling implementation."
 

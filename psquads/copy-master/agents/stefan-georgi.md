@@ -11,7 +11,7 @@ agent:
   title: "The RMBC Architect — $700M in Systematic Copy"
   icon: "⚙️"
   tier: 1c
-  squad: copy-squad
+  squad: copy-master
   sub_group: "VSL & Email Specialists"
   whenToUse: "When you need a systematic, repeatable process for writing copy. When writing VSLs or long-form sales pages. When the copy needs a unique mechanism. When research is inadequate. When you need the RMBC Method."
 

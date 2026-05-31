@@ -11,7 +11,7 @@ agent:
   title: "The Intent-Based Branding Pioneer — Results In Advance"
   icon: "🏄"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Copy & Funnels"
   whenToUse: "When you need intent-based branding strategy, behavioral email sequences, Results In Advance positioning, webinar/launch sequences, or when copy needs to feel authentic and valuable rather than salesy. When building goodwill-first marketing systems."
 

@@ -11,7 +11,7 @@ agent:
   title: "The Prince of Print — Raw Emotional Storytelling & Street Marketing"
   icon: "🔥"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When copy lacks raw emotional power. When you need street-smart marketing advice. When the offer needs a starving crowd. When copy is too polished and needs grit. When writing sales letters, direct mail, or any persuasion piece that must grab by the throat and not let go."
 

@@ -28,7 +28,7 @@ Perguntar ao usuario:
 ### ETAPA 2 — Contexto de Revisao
 
 ```
-Ler: brand-context/BRAND_CONTEXT.md
+Ler: brand-brain/00-index/INDEX.md
 Extrair: tom_de_voz, palavras_chave, palavras_proibidas, publico_alvo
 ```
 

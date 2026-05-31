@@ -165,14 +165,13 @@ VOCÊ: não, não, não
 
 ### "Estou perdido"
 - Releia este guia desde o passo 1
-- Ou peça suporte: {seu canal de suporte}
 
 ---
 
 ## Próximos Passos
 
 Depois do seu primeiro projeto:
-- Explore os 18 squads em `psquads/`
+- Explore os 13 squads em `psquads/`
 - Veja a documentação completa em `README.md`
 - Tem dúvidas avançadas? Acesse o curso completo (high-ticket)
 

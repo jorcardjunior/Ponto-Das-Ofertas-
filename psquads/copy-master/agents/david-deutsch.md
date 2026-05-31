@@ -11,7 +11,7 @@ agent:
   title: "The CopyTHINKING Expert — Big Ideas & Fascination Master"
   icon: "🧩"
   tier: 1d
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Offers & Sales Pages"
   whenToUse: "When copy needs a stronger Big Idea. When you need world-class fascination bullets. When the THINKING behind the copy is weak — not the writing. When you need to apply fiction techniques to sales copy. When generating multiple headline approaches."
 

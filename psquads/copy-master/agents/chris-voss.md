@@ -11,7 +11,7 @@ agent:
   title: "The FBI Negotiator — Tactical Empathy & Persuasive Dialogue"
   icon: "🎙️"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Persuasion Scientists"
   whenToUse: "When sales copy needs to feel like a conversation rather than a pitch. When you need to handle objections before they're voiced (accusation audit). When writing email sequences that build rapport and trust. When copy needs tactical empathy — showing prospects you understand their world. When crafting sales scripts, chatbot copy, or conversational landing pages."
 

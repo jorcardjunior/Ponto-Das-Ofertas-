@@ -60,16 +60,16 @@ copy_routing:
   sales:
     primary: gary-halbert
     secondary: dan-kennedy
-    squad: copy-squad
+    squad: copy-master
   educational:
     primary: david-ogilvy
-    squad: copy-squad
+    squad: copy-master
   storytelling:
     primary: andre-chaperon
-    squad: copy-squad
+    squad: copy-master
   hooks:
     primary: john-caples
-    squad: copy-squad
+    squad: copy-master
   fallback: content-chief
 
 hashtag_strategy:
@@ -89,7 +89,7 @@ quality_thresholds:
   rework: 0
 
 brand_context:
-  path: "brand-context/BRAND_CONTEXT.md"
+  path: "brand-brain/00-index/INDEX.md"
   auto_load: true
   required_fields:
     - nome_marca

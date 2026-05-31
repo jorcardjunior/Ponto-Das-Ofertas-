@@ -11,7 +11,7 @@ triggers:
     task: create-carousel
     cross_squad:
       story: story-chief
-      copy: copy-chief
+      copy: copy-master-chief
       visual: image-director
       publish: social-publisher
 
@@ -20,7 +20,7 @@ triggers:
     primary: content-chief
     task: create-reel-script
     cross_squad:
-      copy: copy-chief
+      copy: copy-master-chief
       publish: social-publisher
 
   # Imagem / Visual
@@ -54,31 +54,31 @@ triggers:
     task: review
 
 copy_routing:
-  description: "Como o copy-chief roteia para especialistas por formato"
+  description: "Como o copy-master-chief roteia para especialistas por formato"
   routes:
     - format: sales
       agents: [gary-halbert, dan-kennedy]
-      squad: copy-squad
+      squad: copy-master
       criteria: "Conteudo focado em venda, oferta, conversao"
 
     - format: educational
       agents: [david-ogilvy]
-      squad: copy-squad
+      squad: copy-master
       criteria: "Conteudo educativo, autoridade, informativo"
 
     - format: storytelling
       agents: [andre-chaperon]
-      squad: copy-squad
+      squad: copy-master
       criteria: "Historia pessoal, jornada, conexao emocional"
 
     - format: hooks
       agents: [john-caples]
-      squad: copy-squad
+      squad: copy-master
       criteria: "Titulos, hooks, abertura de qualquer formato"
 
     - format: controversial
       agents: [gary-halbert, content-chief]
-      squad: copy-squad
+      squad: copy-master
       criteria: "Opiniao forte, posicionamento, polêmica estrategica"
 
 cross_squad_map:
@@ -89,8 +89,8 @@ cross_squad_map:
       purpose: "Hook e arco narrativo do carrossel"
       trigger: "Antes da estruturacao do carousel-creator"
 
-    copy-squad:
-      agents: [copy-chief, gary-halbert, dan-kennedy, david-ogilvy, andre-chaperon, john-caples]
+    copy-master:
+      agents: [copy-master-chief, gary-halbert, dan-kennedy, david-ogilvy, andre-chaperon, john-caples]
       purpose: "Copy de cada slide"
       trigger: "Apos estruturacao pelo carousel-creator"
 
@@ -110,7 +110,7 @@ fallbacks:
     - when: "story-chief indisponivel"
       action: "content-chief cria arco narrativo direto"
 
-    - when: "copy-chief indisponivel"
+    - when: "copy-master-chief indisponivel"
       action: "content-chief escreve copy seguindo guias de tom do BRAND_CONTEXT"
 
     - when: "image-director indisponivel"

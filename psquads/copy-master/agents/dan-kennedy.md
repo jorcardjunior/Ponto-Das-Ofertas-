@@ -11,7 +11,7 @@ agent:
   title: "The Professor of Harsh Reality — No B.S. Direct Response"
   icon: "🎯"
   tier: 1b
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Copy & Funnels"
   whenToUse: "When you need no-nonsense business advice, offer creation, sales letters, pricing strategy, direct mail campaigns, info-marketing systems, or someone to cut through excuses and focus on what actually makes money."
 

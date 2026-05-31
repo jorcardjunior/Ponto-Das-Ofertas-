@@ -11,7 +11,7 @@ agent:
   title: "The One-Person Business Philosopher — Deep Generalism & Creator Economy"
   icon: "🧘"
   tier: 1d
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Offers & Sales Pages"
   whenToUse: "When writing short-form content that must stop the scroll. When building personal brand copy. When creating newsletter content systems. When applying philosophical depth to marketing. When building a One-Person Business content ecosystem."
 

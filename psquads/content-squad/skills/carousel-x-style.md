@@ -58,7 +58,7 @@ Apresentar ao usuário e aguardar aprovação antes de continuar.
 ---
 
 ### ETAPA 2 — Redator ⏸ CHECKPOINT
-*(copy-chief → especialista por formato)*
+*(copy-master-chief → especialista por formato)*
 
 Com o hook aprovado, escrever o copy dos slides 2-N seguindo a Escada de Consciência:
 > Contexto → Problema → Insight → Implicação → Virada → Aplicação → CTA

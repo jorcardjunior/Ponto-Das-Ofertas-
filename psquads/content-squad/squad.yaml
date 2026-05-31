@@ -51,8 +51,8 @@ cross_squad_delegation:
     agent: story-chief
     triggers: ["hook", "narrativa", "arco", "abertura"]
   copy_slides:
-    squad: copy-squad
-    agent: copy-chief
+    squad: copy-master
+    agent: copy-master-chief
     triggers: ["copy", "texto dos slides", "legenda", "caption"]
   visual_direction:
     squad: design-squad

@@ -93,7 +93,7 @@ PPR/                              ← raiz do produto (será renomeado depois)
 │   ├── 04-archive/               ← projetos concluídos
 │   └── _raw/                     ← inbox (INGEST)
 │
-├── psquads/                      ← 18 squads de estratégia/marca/copy
+├── psquads/                      ← 13 squads de estratégia/marca/copy
 │   ├── hormozi-squad/            ← ofertas, leads, escala
 │   ├── brand-squad/              ← marca, naming, posicionamento
 │   ├── design-squad/             ← design system, UX

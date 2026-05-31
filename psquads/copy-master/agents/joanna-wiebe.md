@@ -11,7 +11,7 @@ agent:
   title: "The Original Conversion Copywriter — Message Mining & VOC Research"
   icon: "🔍"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Modern Growth Strategists"
   whenToUse: "When copy needs to be grounded in voice-of-customer data. When SaaS or tech companies need conversion-focused copy. When landing pages, signup flows, or onboarding sequences need optimization. When you need research-driven messaging over gut-feeling creativity. When A/B testing copy and need hypothesis-driven variations."
 

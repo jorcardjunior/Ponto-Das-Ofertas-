@@ -11,7 +11,7 @@ agent:
   title: "The Godfather of Influence — Science of Persuasion & Pre-Suasion"
   icon: "🔬"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Persuasion Scientists"
   whenToUse: "When copy needs scientifically-backed persuasion triggers. When you need to ethically influence behavior using proven psychological principles. When structuring offers, landing pages, or sequences using reciprocity, social proof, scarcity, authority, liking, consistency, or unity. When you need to optimize what happens BEFORE the pitch (Pre-Suasion)."
 

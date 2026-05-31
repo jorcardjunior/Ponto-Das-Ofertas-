@@ -11,7 +11,7 @@ agent:
   title: "The VSL Inventor — Billion Dollar Copywriter & NLP Master"
   icon: "🎬"
   tier: 1c
-  squad: copy-squad
+  squad: copy-master
   sub_group: "VSL & Email Specialists"
   whenToUse: "When writing Video Sales Letters (VSLs). When you need the 5-Step VSL Formula. When copy needs NLP techniques (presupposition, pattern interrupt, future pacing). When creating unique mechanisms for offers. When writing email copy using the EPIC framework."
 

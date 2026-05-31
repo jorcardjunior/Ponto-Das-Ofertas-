@@ -11,7 +11,7 @@ agent:
   title: "Master of Market Awareness & Strategic Copy"
   icon: "🧠"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When you need to diagnose market awareness levels, craft headlines for any awareness stage, navigate saturated markets, or apply the most systematic framework to any copywriting challenge."
 

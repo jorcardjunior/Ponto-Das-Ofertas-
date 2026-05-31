@@ -11,7 +11,7 @@ agent:
   title: "The One Belief Architect — 16-Word Sales Letter & Financial Copy"
   icon: "💎"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Financial Copy Masters"
   whenToUse: "When writing long-form sales letters, especially for financial, health, or information products. When you need to find the one core belief that drives the sale. When structuring any sales argument around 10 psychological questions. When copy lacks a clear central thesis that everything revolves around."
 

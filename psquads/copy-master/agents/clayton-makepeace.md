@@ -11,7 +11,7 @@ agent:
   title: "The Highest-Paid Copywriter — Emotional Selling & the Four-Legged Stool"
   icon: "💰"
   tier: 1a
-  squad: copy-squad
+  squad: copy-master
   sub_group: "Direct Response Legends"
   whenToUse: "When copy needs emotional power grounded in proof. When writing financial or health promotions. When the Four-Legged Stool is incomplete. When you need to identify and amplify Dominant Resident Emotions. When pricing strategy matters."
 
