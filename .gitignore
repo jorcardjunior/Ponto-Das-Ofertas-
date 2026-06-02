@@ -49,6 +49,9 @@ hefaisto/PRD.md
 # Dados da operação do lead — NÃO versionar (repo público, só o framework vai pro git)
 landing/
 
+# Overrides locais (dados reais da marca ficam fora do git; o template versionado fica em branco)
+*.local.md
+
 # Sobras obsoletas já migradas (copy-squad → copy-master, brand-context → brand-brain)
 psquads/copy-squad/
 psquads/brand-context/

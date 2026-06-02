@@ -8,6 +8,7 @@ updated: 2026-05-26
 # Design Tokens
 
 > Fonte única da verdade para o visual da marca. Hefaisto e [[design-squad]] consomem daqui.
+> Preencha com os valores da sua marca. **Override local:** se existir um `design-tokens.local.md` (ignorado pelo git), ele tem prioridade — use-o para manter valores reais fora do repositório.
 
 ## Cores
 
