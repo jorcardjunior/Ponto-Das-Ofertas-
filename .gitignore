@@ -40,10 +40,18 @@ coverage/
 
 # Project-generated PRDs (gerados pelo Gaios em cada projeto do usuário)
 docs/PRD.md
+hefaisto/PRD.md
 
 # Hefaisto internal state
 .ai/
 *.tmp
+
+# Dados da operação do lead — NÃO versionar (repo público, só o framework vai pro git)
+landing/
+
+# Sobras obsoletas já migradas (copy-squad → copy-master, brand-context → brand-brain)
+psquads/copy-squad/
+psquads/brand-context/
 
 # Python
 __pycache__/
