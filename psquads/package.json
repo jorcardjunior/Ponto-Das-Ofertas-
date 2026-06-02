@@ -1,21 +1,12 @@
 {
   "name": "promptfy-squads",
   "version": "1.0.0",
-  "description": "12 squads de agentes IA especializados — built on Synkra AIOS",
+  "description": "12 squads de agentes IA especializados do Promptfy OS",
   "license": "MIT",
-  "dependencies": {
-    "@aiox-squads/core": "latest"
-  },
-  "scripts": {
-    "install-squads": "node install.js",
-    "doctor": "npx aios-core doctor"
-  },
   "keywords": [
     "ai-agents",
     "squads",
     "promptfy",
-    "synkra",
-    "aios",
     "claude-code"
   ],
   "engines": {

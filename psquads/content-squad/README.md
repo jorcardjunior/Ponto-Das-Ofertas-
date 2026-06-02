@@ -127,4 +127,4 @@ Se algum squad nao estiver presente, o content-chief assume a funcao com recurso
 
 ---
 
-*Content Squad — Parte do Promptfy Squads | Built on Synkra AIOS*
+*Content Squad — Parte do Promptfy OS*

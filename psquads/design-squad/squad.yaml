@@ -2,7 +2,7 @@ name: design-squad
 version: "1.0.0"
 short-title: "Design Squad"
 description: "Squad de design operations — 3 experts (Brad Frost, Dan Mall, Dave Malouf) + 4 especialistas + 1 orquestrador. Design systems, UX, UI, visual."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "design-squad"
 

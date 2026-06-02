@@ -2,7 +2,7 @@ name: hormozi-squad
 version: "1.0.0"
 short-title: "Hormozi Squad"
 description: "Squad de 16 agentes implementando os frameworks de Alex Hormozi. Offers, leads, pricing, sales, content, hooks, launch, retention, scaling."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "hormozi-squad"
 

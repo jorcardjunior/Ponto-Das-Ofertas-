@@ -2,7 +2,7 @@ name: c-level-squad
 version: "1.0.0"
 short-title: "C-Level Squad"
 description: "C-suite virtual de 6 executivos — CEO (Vision Chief), COO, CMO, CTO, CIO, CAIO. Estrategia, operacoes, marketing, tecnologia, AI."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "c-level-squad"
 

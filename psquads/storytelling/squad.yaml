@@ -2,7 +2,7 @@ name: storytelling
 version: "1.0.0"
 short-title: "Storytelling Squad"
 description: "Squad de 12 mestres do storytelling. Mitologia, screenwriting, narrativa pessoal, business storytelling, improviso, pitching, movimentos sociais."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "storytelling"
 

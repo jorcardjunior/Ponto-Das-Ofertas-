@@ -2,7 +2,7 @@ name: movement
 version: "1.0.0"
 short-title: "Movement Squad"
 description: "Squad de 7 agentes para construcao de movimentos. Fenomenologia, identidade, manifestos, ciclos de crescimento, medicao de impacto."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "movement"
 

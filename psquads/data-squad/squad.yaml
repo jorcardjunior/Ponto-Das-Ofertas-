@@ -2,7 +2,7 @@ name: data-squad
 version: "1.0.0"
 short-title: "Data Squad"
 description: "Squad de 7 estrategistas data-driven — analytics (Kaushik), CLV (Fader), growth (Ellis), community (Spinks), customer success (Mehta), audience (Kao)."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "data-squad"
 

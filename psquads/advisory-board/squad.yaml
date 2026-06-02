@@ -2,7 +2,7 @@ name: advisory-board
 version: "1.0.0"
 short-title: "Advisory Board"
 description: "Board de 11 conselheiros estrategicos — Ray Dalio, Charlie Munger, Naval Ravikant, Peter Thiel, Reid Hoffman, Simon Sinek, Brene Brown, e mais."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "advisory-board"
 

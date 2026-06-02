@@ -2,7 +2,7 @@ name: cybersecurity
 version: "1.0.0"
 short-title: "Cybersecurity Squad"
 description: "Squad de 15 agentes de ciberseguranca. Pentest, red team, blue team, AppSec, incident response, recon, exploitation — tudo com framework etico."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "cybersecurity"
 

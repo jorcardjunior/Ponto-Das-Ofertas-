@@ -2,7 +2,7 @@ name: traffic-masters
 version: "1.0.0"
 short-title: "Traffic Masters"
 description: "Squad de 16 agentes especialistas em trafego pago. Facebook, YouTube, Google Ads, media buying, creative analysis, scaling, tracking."
-author: "Synkra AIOS"
+author: "Promptfy OS"
 license: MIT
 slashPrefix: "traffic-masters"
 
