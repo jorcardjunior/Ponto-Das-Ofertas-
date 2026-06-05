@@ -133,7 +133,7 @@ Para cada squad da rota, nessa ordem:
 3. **design-squad** (`psquads/design-squad/`) — paleta, tipografia, componentes
 4. **storytelling** (`psquads/storytelling/`) — narrativa, hero, jornada
 5. **copy-master** (`psquads/copy-master/`) — copy completo da landing
-6. **visual-generator** (`psquads/design-squad/agents/visual-generator.md`) — gera os ATIVOS visuais (hero, thumbs, ícones, social) via OpenAI `gpt-image-1`. Requer `OPENAI_API_KEY`. Se a chave não existir, **pare e peça ao usuário antes de prosseguir** — não pule esta etapa, não use plataforma alternativa silenciosamente. Salve em `brand-brain/01-projects/{YYYY-MM-projeto}/design/`.
+6. **visual-generator** (`psquads/design-squad/agents/visual-generator.md`) — gera os ATIVOS visuais (hero, thumbs, ícones, social) via OpenAI `gpt-image-2`. Requer `OPENAI_API_KEY`. Se a chave não existir, **pare e peça ao usuário antes de prosseguir** — não pule esta etapa, não use plataforma alternativa silenciosamente. Salve em `brand-brain/01-projects/{YYYY-MM-projeto}/design/`.
 
 Para cada squad:
 - Leia o agente principal do squad em `psquads/{squad}/agents/`

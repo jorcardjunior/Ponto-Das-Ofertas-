@@ -18,7 +18,7 @@ Os PSquads são a camada de **estratégia, marca e copy** do [Promptfy OS](../RE
 | Copy Master | `@copy-master-chief` | Copy de conversão (Halbert, Schwartz, Ogilvy, Hormozi, Sugarman…) |
 | Cybersecurity | `@cyber-chief` | Segurança ofensiva e defensiva, pentest, recon |
 | Data Squad | `@data-chief` | Analytics, growth e comunidade (Sean Ellis, Kaushik, Fader…) |
-| Design Squad | `@design-chief` | UX/UI, design systems e geração de ativos visuais (gpt-image-1) |
+| Design Squad | `@design-chief` | UX/UI, design systems e geração de ativos visuais (gpt-image-2) |
 | Hormozi Squad | `@hormozi-chief` | Ofertas, leads e escala (framework Alex Hormozi) |
 | Movement | `@movement-chief` | Construção de movimentos e comunidades |
 | Storytelling | `@story-chief` | Narrativa e pitch (Campbell, Klaff, Duarte, Harmon…) |
