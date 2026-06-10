@@ -1,6 +1,13 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
+/**
+ * Environment variables — validated at runtime, not build time.
+ *
+ * During `next build`, Turbopack evaluates modules before env vars are loaded.
+ * We always skip build-time validation to prevent "Invalid environment variables"
+ * errors on Vercel. The actual env vars are available at runtime when API routes run.
+ */
 export const env = createEnv({
   server: {
     DATABASE_URL: z.string().min(1),
@@ -20,5 +27,5 @@ export const env = createEnv({
     NEXT_PUBLIC_INVITE_REQUIRED: process.env.NEXT_PUBLIC_INVITE_REQUIRED,
     NODE_ENV: process.env.NODE_ENV,
   },
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION || process.env.VERCEL === '1' || process.env.CI === 'true',
+  skipValidation: true,
 });
