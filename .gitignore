@@ -38,6 +38,11 @@ yarn-error.log*
 coverage/
 .nyc_output/
 
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/dev/
+
 # Project-generated PRDs (gerados pelo Gaios em cada projeto do usuário)
 docs/PRD.md
 hefaisto/PRD.md

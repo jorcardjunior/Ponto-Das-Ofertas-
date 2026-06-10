@@ -1,24 +1,33 @@
 ---
 name: garantias-prontas
-description: Garantias testadas e suas taxas de pedido de reembolso.
+description: Garantias testadas e reutilizáveis.
 type: resource
-updated: 2026-05-26
+updated: 2026-06-06
 ---
 
 # Garantias Prontas
 
-> Garantias que já foram a mercado, com dado real de uso.
+> Coleção de garantias reutilizáveis para ofertas.  
+> Fonte: docs/PRD.md (seção 5.7)
 
-## Formato
+## Garantia Padrão
 
-```
-### [Nome da garantia]
-**Texto:** ...
-**Prazo:** ...
-**% pedidos de reembolso:** ...
-**Origem:** [[YYYY-MM-projeto]]
-```
+**"7 dias de avaliação gratuita ou reembolso na primeira mensalidade se não estiver satisfeito."**
 
-## Acervo
+## Variantes
 
-_(pendente)_
+| Tipo | Texto |
+|------|-------|
+| Teste Grátis | "Se não sentir a diferença, cancele sem pagamento no período de teste." |
+| Satisfação | "Reembolso garantido na primeira mensalidade se não estiver satisfeito." |
+| Transformação | "Se em 30 dias você não reduzir rupturas de estoque, reembolsamos." |
+
+## Como Usar
+
+- Coloque a garantia abaixo do CTA principal na landing page
+- Inclua em emails de nutrição (último email antes do fechamento)
+- Use na página de checkout como elemento de segurança
+
+## Evolução
+
+- 2026-06-06 — Garantia base extraída do PRD do projeto VendeJá

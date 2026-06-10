@@ -2,41 +2,35 @@
 name: marca
 description: Identidade, posicionamento, voz e arquétipos da marca.
 type: area
-updated: 2026-05-26
+updated: 2026-06-06
 ---
 
-# Marca
+# Marca — VendeJá / StockMate
 
-> Preencher conforme a marca for sendo definida. Gaios consulta este arquivo antes de perguntar sobre identidade.
+> Identidade verbal e posicionamento do produto PRINCIPAL atual.  
+> Fonte: docs/PRD.md (seção 2)
 
-## Nome
+## Identidade Verbal
 
-_(pendente)_
+- **Nome principal:** VendeJá
+- **Nome alternativo:** StockMate
+- **Tagline:** "Seu estoque e vendas unificados para vender mais sem perder tempo."
+- **Origem:** Nome simples e direto para um sistema que ajuda a vender já e controlar estoque todos os dias.
 
 ## Posicionamento
 
-_(pendente)_
+- **Frase:** "A plataforma inteligente para o vendedor autônomo que vende em Shopee, Mercado Livre e Amazon e quer dominar estoque e pedidos em um só lugar."
+- **Diferenciação:** Foco no multichannel para marketplaces brasileiros, com painel único e automações pensadas para quem não tem time de operações.
+- **Arquétipo:** O Herói Prático — entrega controle rápido, simplificando o dia a dia do vendedor.
 
-## Promessa Central
+## Tom de Voz
 
-_(pendente)_
+| Dimensão | Descrição |
+|---|---|
+| Personalidade (3 adjetivos) | Direto, Confiante, Acolhedor |
+| O que falamos | Simplificamos sua rotina, reduzimos perdas, entregamos clareza |
+| O que NÃO falamos | Jargão técnico, promessas vaga de "crescimento mágico" |
 
-## Arquétipo
+## Evolução
 
-_(pendente — ver [[brand-squad]])_
-
-## Voz e Tom
-
-_(pendente)_
-
-## Valores
-
-_(pendente)_
-
-## Visual
-
-Ver [[design-tokens]].
-
-## Histórico
-
-_(mutações relevantes da marca vão aqui)_
+- 2026-06-06 — Marca definida no PRD. Gaios consolidou com brand-squad e storytelling.

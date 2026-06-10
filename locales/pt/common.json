@@ -1,0 +1,34 @@
+{
+  "appName": "Controle de Estoque",
+  "dashboard": "Dashboard",
+  "products": "Produtos",
+  "categories": "Categorias",
+  "suppliers": "Fornecedores",
+  "sales": "Vendas",
+  "stock": "Estoque",
+  "actions": {
+    "add": "Adicionar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "messages": {
+    "success": "Operação realizada com sucesso!",
+    "error": "Ocorreu um erro. Tente novamente.",
+    "loading": "Carregando...",
+    "noItems": "Nenhum item encontrado"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "email": "Por favor, insira um email válido",
+    "minLength": "Mínimo de {length} caracteres",
+    "maxLength": "Máximo de {length} caracteres"
+  },
+  "LanguageSwitcher": {
+    "pt": "Português",
+    "es": "Espanhol",
+    "label": "Idioma"
+  }
+}

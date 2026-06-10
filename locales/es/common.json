@@ -1,0 +1,34 @@
+{
+  "appName": "Control de Inventario",
+  "dashboard": "Panel de Control",
+  "products": "Productos",
+  "categories": "Categorías",
+  "suppliers": "Proveedores",
+  "sales": "Ventas",
+  "stock": "Inventario",
+  "actions": {
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "messages": {
+    "success": "Operación realizada con éxito!",
+    "error": "Ocurrió un error. Inténtalo nuevamente.",
+    "loading": "Cargando...",
+    "noItems": "No se encontraron elementos"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor, ingresa un email válido",
+    "minLength": "Mínimo de {length} caracteres",
+    "maxLength": "Máximo de {length} caracteres"
+  },
+  "LanguageSwitcher": {
+    "pt": "Português",
+    "es": "Español",
+    "label": "Idioma"
+  }
+}

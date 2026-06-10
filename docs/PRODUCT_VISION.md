@@ -1,0 +1,315 @@
+# PRODUCT_VISION.md
+
+# PONTO DAS OFERTAS
+
+Versão: 1.0
+Status: Documento Mestre do Produto
+
+---
+
+# MISSÃO
+
+Transformar pequenos e médios lojistas em operadores profissionais através de uma plataforma simples, inteligente e orientada a lucro.
+
+O sistema não deve ser apenas um controle de estoque.
+
+O sistema deve funcionar como um centro operacional completo do negócio.
+
+---
+
+# POSICIONAMENTO
+
+Ponto das Ofertas é uma plataforma de gestão para vendedores que operam em:
+
+- Shopee
+- Mercado Livre
+- Amazon
+- Loja Física
+- Redes Sociais
+
+O objetivo é ajudar o lojista a:
+
+- controlar estoque
+- aumentar lucro
+- reduzir perdas
+- identificar oportunidades
+- tomar decisões através de dados
+
+---
+
+# PROBLEMA QUE RESOLVEMOS
+
+Hoje muitos lojistas utilizam:
+
+- planilhas
+- cadernos
+- aplicativos genéricos
+
+Problemas:
+
+- estoque desatualizado
+- produtos sem giro
+- falta de controle financeiro
+- falta de indicadores
+- compras erradas
+- margem desconhecida
+
+---
+
+# VISÃO DE LONGO PRAZO
+
+Ser o sistema operacional do pequeno lojista brasileiro.
+
+Não apenas controlar estoque.
+
+Controlar:
+
+- estoque
+- vendas
+- lucro
+- fornecedores
+- marketplace
+- indicadores
+- inteligência operacional
+
+---
+
+# PÚBLICO ALVO
+
+Primário:
+
+- vendedores Shopee
+- vendedores Mercado Livre
+- vendedores Amazon
+
+Secundário:
+
+- lojas físicas
+- lojas de bairro
+- pequenos distribuidores
+
+Terciário:
+
+- redes de lojas
+- franquias
+- atacadistas
+
+---
+
+# DIFERENCIAL
+
+Não competir apenas com sistemas de estoque.
+
+Competir através de:
+
+- simplicidade
+- inteligência
+- visual profissional
+- indicadores financeiros
+- orientação ao lucro
+
+---
+
+# PILARES DO PRODUTO
+
+## PILAR 1
+
+Controle de Estoque
+
+Objetivo:
+
+Saber exatamente:
+
+- o que entrou
+- o que saiu
+- o que está acabando
+
+---
+
+## PILAR 2
+
+Gestão de Vendas
+
+Objetivo:
+
+Registrar vendas rapidamente.
+
+Atualizar estoque automaticamente.
+
+---
+
+## PILAR 3
+
+Inteligência de Negócio
+
+Objetivo:
+
+Mostrar:
+
+- receita
+- lucro
+- ROI
+- ticket médio
+- margem
+
+---
+
+## PILAR 4
+
+Saúde do Estoque
+
+Classificações:
+
+🔴 Crítico
+
+🟡 Atenção
+
+🟢 Saudável
+
+---
+
+## PILAR 5
+
+Tomada de Decisão
+
+Mostrar:
+
+- produtos parados
+- produtos mais vendidos
+- necessidade de reposição
+- projeções
+
+---
+
+# MVP 1.0
+
+Obrigatório:
+
+- Login
+- Cadastro de Produtos
+- Categorias
+- Fornecedores
+- Controle de Estoque
+- Entradas
+- Saídas
+- Registro de Venda
+- Dashboard
+- Relatórios Básicos
+
+---
+
+# MVP 2.0
+
+Adicionar:
+
+- BI Avançado
+- Gráficos
+- Alertas Inteligentes
+- Projeções
+
+---
+
+# MVP 3.0
+
+Adicionar:
+
+- Integração Mercado Livre
+- Integração Shopee
+- Integração Amazon
+
+---
+
+# MVP 4.0
+
+Adicionar:
+
+- Assinaturas
+- Stripe
+- Multiempresa
+- Multiusuário
+
+---
+
+# DASHBOARD EXECUTIVO
+
+Sempre exibir:
+
+- Receita
+- Lucro
+- ROI
+- Ticket Médio
+- Produtos em Estoque
+- Produtos Críticos
+- Produtos sem Giro
+
+---
+
+# REGRAS DE UX
+
+Toda tela deve possuir:
+
+- Loading State
+- Empty State
+- Error State
+- Feedback Visual
+- Responsividade
+
+Nunca criar interfaces amadoras.
+
+---
+
+# DESIGN
+
+Estilo:
+
+- moderno
+- corporativo
+- premium
+- profissional
+
+Referências:
+
+- Stripe
+- Linear
+- Vercel
+- Notion
+- Shopify
+
+---
+
+# REGRAS PARA IA
+
+Antes de implementar:
+
+1. Ler este documento
+2. Ler PRD.md
+3. Ler ROADMAP.md
+4. Ler SYSTEM_OPERATING_MANUAL.md
+
+Nunca implementar funcionalidades que contrariem esta visão.
+
+Quando houver dúvida:
+
+A visão deste documento tem prioridade.
+
+---
+
+# DEFINIÇÃO DE SUCESSO
+
+O produto é considerado bem sucedido quando:
+
+- reduz erros de estoque
+- reduz trabalho manual
+- aumenta visibilidade do negócio
+- melhora tomada de decisão
+- gera valor suficiente para ser vendido como SaaS
+
+---
+
+# OBJETIVO FINAL
+
+Construir o melhor sistema de gestão operacional para pequenos lojistas brasileiros.
+
+Não apenas controlar estoque.
+
+Transformar dados em lucro.

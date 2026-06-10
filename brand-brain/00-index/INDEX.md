@@ -1,72 +1,49 @@
----
-name: index
-description: Mapa-mestre do brand-brain. Aponta para áreas, projetos ativos e recursos.
-type: index
-updated: 2026-05-26
----
+# Brand-Brain — Índice Central
 
-# INDEX — Mapa-mestre do brand-brain
+> Segundo cérebro persistente da marca. Tudo que o Gaios, PSquads e Hefaisto precisam saber sobre o projeto mora aqui.
 
-> Este é o ponto de entrada. Toda LLM começa por aqui antes de explorar o cérebro.
+## Estrutura (PARA + LLM Wiki)
 
-## 📐 Regras
+```
+brand-brain/
+├── 00-index/          ← você está aqui (índice, schema, changelog)
+├── 01-projects/       ← projetos ATIVOS (em andamento)
+├── 02-areas/          ← responsabilidades contínuas (marca, ofertas, audiência...)
+├── 03-resources/      ← bancos reutilizáveis (headlines, bullets, personas...)
+├── 04-archive/        ← projetos concluídos (referência)
+└── _raw/              ← inbox para processamento (INGEST)
+```
 
-- [[schema]] — contrato de organização (PARA + Karpathy, naming, frontmatter, wikilinks)
-- [[changelog]] — histórico de mutações
+## Índice Rápido
 
-## 📁 Áreas Contínuas da Marca (`02-areas/`)
+### Áreas (`02-areas/`)
+- [[marca]] — Identidade verbal, visual e princípios
+- [[ofertas]] — Estrutura comercial e pricing
+- [[audiencia]] — ICPs e segmentação
+- [[conteudo]] — Pilares editoriais e calendário
+- [[trafego]] — Aquisição paga e orgânica
+- [[financeiro]] — Modelo de receita e unit economics
 
-Identidade viva. Atualizada continuamente.
+### Resources (`03-resources/`)
+- [[headlines-banco]] — 30+ headlines prontas
+- [[bullets-banco]] — 20+ bullets de benefício
+- [[objecoes-respostas]] — 15+ objeções mapeadas
+- [[garantias-prontas]] — 10+ garantias testadas
+- [[design-tokens]] — Paleta, tipografia, espaçamento
+- [[icps]] — 5 ICPs detalhados
+- [[personas]] — 4 personas individuais
 
-- [[marca]] — identidade, posicionamento, voz, arquétipo
-- [[ofertas]] — produtos, preços, garantias, bônus atuais
-- [[audiencia]] — ICP, personas, dores, desejos
-- [[conteudo]] — pilares de conteúdo, canais, calendário
-- [[trafego]] — estratégia de aquisição, fontes, CAC
-- [[financeiro]] — receita, custos, métricas-chave
+## Schema
 
-## 🚀 Projetos Ativos (`01-projects/`)
+Ver `SCHEMA.md` para o contrato completo de estrutura.
 
-Trabalho em andamento. Cada projeto = uma subpasta.
+## Changelog
 
-> Nenhum projeto ativo ainda. Quando o lead começar um, Gaios cria `01-projects/YYYY-MM-{nome}/`.
+Ver `CHANGELOG.md` para histórico de versões.
 
-## 📚 Recursos Reutilizáveis (`03-resources/`)
+## Princípios
 
-Bancos e templates que servem para múltiplos projetos.
-
-- [[headlines-banco]] — headlines testadas + performance
-- [[bullets-banco]] — bullets de copy reutilizáveis
-- [[objecoes-respostas]] — objeções comuns + respostas
-- [[garantias-prontas]] — garantias testadas
-- [[design-tokens]] — cores, tipografia, espaçamentos da marca
-- `icp/` — ICPs detalhados
-- `personas/` — personas individuais
-
-## 🗄️ Arquivo (`04-archive/`)
-
-Projetos concluídos por trimestre. Vazio até o primeiro projeto ser finalizado.
-
-## 📥 Ingest Bruto (`_raw/`)
-
-Material ainda não processado. Gaios consome daqui via operação INGEST.
-
-- [[notas-soltas]] — notas avulsas do lead
-- `inspiracoes/` — material externo capturado
-- `insights/` — sacadas pontuais
-- `transcripts/` — transcrições de áudios/vídeos
-
-## 🧭 Operações do Cérebro
-
-Ver [[schema]] para detalhes:
-
-1. **INGEST** — processar conteúdo de `_raw/` para áreas e resources
-2. **QUERY** — responder perguntas consultando o cérebro
-3. **LINT** — detectar e resolver contradições
-
-## 🔍 Como o Gaios Usa Este Cérebro
-
-- **Antes de perguntar** ao usuário → consulta [[marca]], [[ofertas]], [[audiencia]] e relacionados.
-- **Durante o fluxo** → escreve em `01-projects/{projeto-atual}/`.
-- **Ao final** → promove o que virou padrão para `02-areas/` e `03-resources/`.
-- **Sempre** → mantém [[index]] e [[changelog]] atualizados.
+1. **Markdown puro** + wikilinks `[[]]` — LLM-independente.
+2. **Cresce a cada projeto** — promova assets vencedores.
+3. **Decisões em áreas, tática em resources** — separação clara.
+4. **Tudo que Gaios, PSquads ou Hefaisto precisa saber mora aqui.**

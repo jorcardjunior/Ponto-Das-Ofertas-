@@ -1,38 +1,54 @@
 ---
 name: design-tokens
-description: Cores, tipografia, espaçamentos e elementos visuais oficiais da marca.
+description: Cores, tipografia, espaçamentos e tokens de design da marca.
 type: resource
-updated: 2026-05-26
+updated: 2026-06-06
 ---
 
-# Design Tokens
+# Design Tokens — VendeJá / StockMate
 
-> Fonte única da verdade para o visual da marca. Hefaisto e [[design-squad]] consomem daqui.
-> Preencha com os valores da sua marca. **Override local:** se existir um `design-tokens.local.md` (ignorado pelo git), ele tem prioridade — use-o para manter valores reais fora do repositório.
+> Sistema de design visual unificado.  
+> Fonte: docs/PRD.md (seção 3)
 
-## Cores
+## Paleta de Cores
 
-```
-primary:   #
-secondary: #
-accent:    #
-neutral:   #
-bg:        #
-text:      #
-```
+### Primárias
+
+| Nome | Hex | Uso |
+|------|-----|-----|
+| Primary | `#1D4ED8` | Botões principais, links, CTAs |
+| Secondary | `#10B981` | Sucesso, checkmarks, progresso |
+
+### Neutros
+
+| Nome | Hex | Uso |
+|------|-----|-----|
+| Dark | `#111827` | Texto principal |
+| Gray | `#6B7280` | Texto secundário |
+| Light | `#F3F4F6` | Fundos, divisões |
+
+### Semântica
+
+| Nome | Hex | Uso |
+|------|-----|-----|
+| Success | `#10B981` | Operações bem-sucedidas |
+| Error | `#EF4444` | Erros, alertas críticos |
+| Warning | `#F59E0B` | Atenção, estoque baixo |
 
 ## Tipografia
 
-```
-heading: 
-body:    
-mono:    
-```
+| Função | Fonte | Peso | Tamanho |
+|--------|-------|------|---------|
+| Display (H1, H2) | Inter | Bold | 48-64px |
+| Body | Inter | Regular | 16px |
+| Mono | JetBrains Mono | Regular | 14px |
 
 ## Espaçamentos
 
-_(pendente — sistema base 4/8/16)_
+- **Base:** 8px
+- **Padding padrão:** 16px, 24px, 32px
+- **Border radius:** 8px (padrão), 12px (cards), 16px (botões grandes)
 
-## Logo
+## Evolução
 
-_(pendente — arquivos em design/)_
+- 2026-06-06 — Tokens base extraídos do PRD do projeto VendeJá

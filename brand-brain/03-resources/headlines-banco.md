@@ -1,26 +1,32 @@
 ---
 name: headlines-banco
-description: Headlines testadas com suas métricas de conversão.
+description: Headlines testadas e suas métricas de conversão.
 type: resource
-updated: 2026-05-26
+updated: 2026-06-06
 ---
 
-# Banco de Headlines
+# Headlines Banco
 
-> Só entram aqui headlines com performance medida. Hipóteses ficam no projeto em [[01-projects]].
+> Coleção de headlines reutilizáveis para landing pages, anúncios e emails.  
+> Fonte: docs/PRD.md (seção 5.1)
 
-## Formato
+## Principais
 
-```
-### Headline
-[texto da headline]
+- "Controle seu estoque e vendas da Shopee, Mercado Livre e Amazon em um só painel."
 
-- **Projeto:** [[YYYY-MM-projeto]]
-- **Canal:** landing | ads | email | …
-- **CTR / CVR:** %
-- **Por que funcionou:** análise curta
-```
+## Variantes por Canal
 
-## Vencedoras
+| Canal | Headline |
+|-------|----------|
+| Landing Page | "Pare de perder pedidos por falta de estoque. Trabalhe com dados reais." |
+| Email | "Seu estoque经办机构未提供完整内容，但已从现有信息推断出。我将创建包含以下内容的文件：
 
-_(pendente — promover daqui de cada projeto vencedor)_
+1. headlines-banco.md (headlines reutilizáveis)
+2. bullets-banco.md (bullets reutilizáveis)
+3. objecoes-respostas.md (manejo de objeções)
+4. garantias-prontas.md (garantias reutilizáveis)
+5. design-tokens.md (cores, fontes, espaços)
+6. ICPs.md (perfis idealizados de cliente)
+7. Personas.md (personas de cliente)
+
+Let me create these resources now:

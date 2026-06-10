@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String?
+  tenantId     String   @default("default")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  products  Product[]
+  suppliers Supplier[]
+  sales     Sale[]
+  audits    AuditLog[]
+  movements StockMovement[]
+  storeMemberships StoreMember[]
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  name           String
+  sku            String
+  category       String
+  marketplace    String
+  price          Decimal  @db.Decimal(10, 2)
+  costPrice      Decimal  @db.Decimal(10, 2) @default(0)
+  marketplaceFee Decimal  @db.Decimal(10, 2) @default(0)
+  stock          Int
+  userId         String
+  tenantId       String   @default("default")
+  supplierId     String?
+  deletedAt      DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id])
+  supplier Supplier? @relation(fields: [supplierId], references: [id], onDelete: SetNull)
+  sales    Sale[]
+  movements StockMovement[]
+
+  @@unique([sku, userId])
+  @@index([name])
+  @@index([category])
+  @@index([marketplace])
+  @@index([createdAt])
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  color     String   @default("#94a3b8")
+  userId    String
+  tenantId  String   @default("default")
+
+  @@unique([name, userId])
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model Supplier {
+  id        String   @id @default(cuid())
+  name      String
+  contact   String?
+  phone     String?
+  email     String?
+  userId    String
+  tenantId  String   @default("default")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id])
+  products Product[]
+
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model StockMovement {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  type      String
+  quantity  Int
+  reason    String?
+  userId    String
+  tenantId  String   @default("default")
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+  @@index([userId])
+  @@index([createdAt])
+  @@index([tenantId])
+}
+
+model Sale {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Decimal  @db.Decimal(10, 2)
+  channel   String
+  date      DateTime @default(now())
+  userId    String
+  tenantId  String   @default("default")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([productId])
+  @@index([date])
+  @@index([channel])
+  @@index([tenantId])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  userId    String
+  tenantId  String   @default("default")
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+  @@index([tenantId])
+}
+
+model Store {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  members   StoreMember[]
+}
+
+model StoreMember {
+  id        String   @id @default(cuid())
+  storeId   String
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+
+  @@unique([storeId, userId])
+  @@index([storeId])
+  @@index([userId])
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "D:/SaaS_WebSites_REPOSITORIOS"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "SaaS_WebSites_REPOSITORIOS"
+	}
+}
