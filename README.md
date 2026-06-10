@@ -261,7 +261,7 @@ Promptfy-OS/
 ├── docs/                         # PRD, PRD-template, stories
 ├── types/                        # Type definitions (next-auth.d.ts)
 ├── auth.ts                       # Auth.js v5 config (raiz)
-├── middleware.ts                  # Auth middleware + i18n (Next.js)
+├── proxy.ts                      # Auth middleware + i18n (Next.js 16) (Next.js)
 ├── playwright.config.ts          # Configuração Playwright
 ├── .github/workflows/            # CI/CD
 └── ... (config files)
