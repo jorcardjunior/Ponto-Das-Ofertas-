@@ -20,5 +20,5 @@ export const env = createEnv({
     NEXT_PUBLIC_INVITE_REQUIRED: process.env.NEXT_PUBLIC_INVITE_REQUIRED,
     NODE_ENV: process.env.NODE_ENV,
   },
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION || process.env.VERCEL === '1' || process.env.CI === 'true',
 });
