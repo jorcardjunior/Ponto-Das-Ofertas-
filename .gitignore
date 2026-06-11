@@ -26,6 +26,9 @@ out/
 # OS
 .DS_Store
 Thumbs.db
+
+# Deploy / SSL certs
+nginx/certs/
 desktop.ini
 
 # Logs
